@@ -1,0 +1,303 @@
+<!DOCTYPE html>
+<html>
+<head><meta name="generator" content="Hexo 3.8.0">
+  <meta charset="utf-8">
+  
+
+  
+  <title>Java面试题一 | Hexo</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+  <meta name="description" content="一、基础篇1.1 Java基础 面向对象的特征：继承、封装和多态 final、finally和finallize的区别 Exception、Error、运行时异常与一般异常有何异同 请写出5种常见的RuntimeException int和Integer有什么区别，Integer的值缓存范围 包装类、装箱和拆箱 String、StringBuilder、StringBuffer 重载和重写 抽象类">
+<meta name="keywords" content="Java">
+<meta property="og:type" content="article">
+<meta property="og:title" content="Java面试题一">
+<meta property="og:url" content="https://silentwatson.github.io/2019/01/09/Java面试题/index.html">
+<meta property="og:site_name" content="Hexo">
+<meta property="og:description" content="一、基础篇1.1 Java基础 面向对象的特征：继承、封装和多态 final、finally和finallize的区别 Exception、Error、运行时异常与一般异常有何异同 请写出5种常见的RuntimeException int和Integer有什么区别，Integer的值缓存范围 包装类、装箱和拆箱 String、StringBuilder、StringBuffer 重载和重写 抽象类">
+<meta property="og:locale" content="default">
+<meta property="og:updated_time" content="2019-01-22T05:36:39.653Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="Java面试题一">
+<meta name="twitter:description" content="一、基础篇1.1 Java基础 面向对象的特征：继承、封装和多态 final、finally和finallize的区别 Exception、Error、运行时异常与一般异常有何异同 请写出5种常见的RuntimeException int和Integer有什么区别，Integer的值缓存范围 包装类、装箱和拆箱 String、StringBuilder、StringBuffer 重载和重写 抽象类">
+  
+    <link rel="alternate" href="/atom.xml" title="Hexo" type="application/atom+xml">
+  
+  
+    <link rel="icon" href="/favicon.png">
+  
+  
+    <link href="//fonts.googleapis.com/css?family=Source+Code+Pro" rel="stylesheet" type="text/css">
+  
+  <link rel="stylesheet" href="/css/style.css">
+</head>
+</html>
+<body>
+  <div id="container">
+    <div id="wrap">
+      <header id="header">
+  <div id="banner"></div>
+  <div id="header-outer" class="outer">
+    <div id="header-title" class="inner">
+      <h1 id="logo-wrap">
+        <a href="/" id="logo">Hexo</a>
+      </h1>
+      
+    </div>
+    <div id="header-inner" class="inner">
+      <nav id="main-nav">
+        <a id="main-nav-toggle" class="nav-icon"></a>
+        
+          <a class="main-nav-link" href="/">Home</a>
+        
+          <a class="main-nav-link" href="/archives">Archives</a>
+        
+      </nav>
+      <nav id="sub-nav">
+        
+          <a id="nav-rss-link" class="nav-icon" href="/atom.xml" title="RSS Feed"></a>
+        
+        <a id="nav-search-btn" class="nav-icon" title="Search"></a>
+      </nav>
+      <div id="search-form-wrap">
+        <form action="//google.com/search" method="get" accept-charset="UTF-8" class="search-form"><input type="search" name="q" class="search-form-input" placeholder="Search"><button type="submit" class="search-form-submit">&#xF002;</button><input type="hidden" name="sitesearch" value="https://silentwatson.github.io"></form>
+      </div>
+    </div>
+  </div>
+</header>
+      <div class="outer">
+        <section id="main"><article id="post-Java面试题" class="article article-type-post" itemscope="" itemprop="blogPost">
+  <div class="article-meta">
+    <a href="/2019/01/09/Java面试题/" class="article-date">
+  <time datetime="2019-01-09T14:45:19.000Z" itemprop="datePublished">2019-01-09</time>
+</a>
+    
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 class="article-title" itemprop="name">
+      Java面试题一
+    </h1>
+  
+
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <h2 id="一、基础篇"><a href="#一、基础篇" class="headerlink" title="一、基础篇"></a>一、基础篇</h2><h3 id="1-1-Java基础"><a href="#1-1-Java基础" class="headerlink" title="1.1 Java基础"></a>1.1 Java基础</h3><ul>
+<li>面向对象的特征：继承、封装和多态</li>
+<li>final、finally和finallize的区别</li>
+<li>Exception、Error、运行时异常与一般异常有何异同</li>
+<li>请写出5种常见的RuntimeException</li>
+<li>int和Integer有什么区别，Integer的值缓存范围</li>
+<li>包装类、装箱和拆箱</li>
+<li>String、StringBuilder、StringBuffer</li>
+<li>重载和重写</li>
+<li>抽象类和接口有什么区别</li>
+<li>说说反射的用途及实现</li>
+<li><a href="https://silentwatson.github.io/2019/01/10/自定义注解的场景及实现/">说说自定义注解的场景及实现</a></li>
+<li>HTTP请求的GET和POST方式的区别</li>
+</ul>
+<table>
+<thead>
+<tr>
+<th>特征</th>
+<th style="text-align:center">GET方法</th>
+<th style="text-align:right">POST方法</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>提交数据类型</td>
+<td style="text-align:center">文本</td>
+<td style="text-align:right">文本、二进制文件</td>
+</tr>
+<tr>
+<td>提交数据长度</td>
+<td style="text-align:center">不超过255个字符</td>
+<td style="text-align:right">没有限制</td>
+</tr>
+<tr>
+<td>提交数据可见性</td>
+<td style="text-align:center">作为URL地址的一部分显示在浏览器地址栏</td>
+<td style="text-align:right">作为请求的消息体，不可见</td>
+</tr>
+<tr>
+<td>提交数据缓存</td>
+<td style="text-align:center">缓存在浏览器URL历史状态中</td>
+<td style="text-align:right">不会被浏览器缓存</td>
+</tr>
+</tbody>
+</table>
+<ul>
+<li>Session和Cookie的区别</li>
+<li>列出自己常用的JDK包</li>
+<li>MVC设计思想</li>
+<li>equals与==的区别</li>
+<li>hashCode和equals方法的区别与练习</li>
+<li>什么是Java序列化和反序列化，如何实现Java序列化？或者请解释Serializable接口的作用</li>
+<li>Object类常见的方法，为什么wait()、notify()会放在Object里边？</li>
+<li>Java的平台无关性如何体现出来的</li>
+<li>JDK和JRE的区别</li>
+<li>Java8有哪些新特性<h3 id="1-2-Java常见集合"><a href="#1-2-Java常见集合" class="headerlink" title="1.2 Java常见集合"></a>1.2 Java常见集合</h3></li>
+<li>List、Set和Map的区别</li>
+<li>Set和hashCode以及equals方法的联系</li>
+<li>ArrayList和LinkedList的区别</li>
+<li>ArrayList和Vector的区别</li>
+<li>HashMap和HashTable的区别</li>
+<li>HashMap和CurrentHashMap的区别</li>
+<li>HashMap的工作原理及代码实现，什么时候用到红黑树</li>
+<li>多线程情况下HashMap死循环的问题</li>
+<li>HashMap出现Hash Dos攻击的问题</li>
+<li>ConcurrentHashMap的工作原理及代码实现，如何统计所有的元素个数</li>
+<li>手写简单的HashMap</li>
+<li>看过哪些Java集合类的源码<h3 id="1-3-进程和线程"><a href="#1-3-进程和线程" class="headerlink" title="1.3 进程和线程"></a>1.3 进程和线程</h3></li>
+<li>线程和进程的概念、并行和并发的概念</li>
+<li>创建线程的方式及实现</li>
+<li>进程间通信的方式</li>
+<li>说说CountDownLatch、CyclicBarrier原理和区别</li>
+<li>说说Semaphore原理</li>
+<li>说说Exchanger原理</li>
+<li>ThreadLocal原理分析，ThreadLocal为什么会出现OOM，出现的深层次原理</li>
+</ul>
+<h1 id="to-be-continued…"><a href="#to-be-continued…" class="headerlink" title="to be continued…"></a>to be continued…</h1>
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="https://silentwatson.github.io/2019/01/09/Java面试题/" data-id="cjrfp2bz4000bxgu5lse5f7p0" class="article-share-link">Share</a>
+      
+      
+  <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Java/">Java</a></li></ul>
+
+    </footer>
+  </div>
+  
+    
+<nav id="article-nav">
+  
+    <a href="/2019/01/10/自定义注解的场景及实现/" id="article-nav-newer" class="article-nav-link-wrap">
+      <strong class="article-nav-caption">Newer</strong>
+      <div class="article-nav-title">
+        
+          自定义注解的场景及实现
+        
+      </div>
+    </a>
+  
+  
+    <a href="/2019/01/04/Mysql语法总结/" id="article-nav-older" class="article-nav-link-wrap">
+      <strong class="article-nav-caption">Older</strong>
+      <div class="article-nav-title">Mysql语法总结</div>
+    </a>
+  
+</nav>
+
+  
+</article>
+
+</section>
+        
+          <aside id="sidebar">
+  
+    
+
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">Tags</h3>
+    <div class="widget">
+      <ul class="tag-list"><li class="tag-list-item"><a class="tag-list-link" href="/tags/Java/">Java</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Tools/">Tools</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/blog/">blog</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/database/">database</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/design-pattern/">design-pattern</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/jsp/">jsp</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/随笔/">随笔</a></li></ul>
+    </div>
+  </div>
+
+
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">Tag Cloud</h3>
+    <div class="widget tagcloud">
+      <a href="/tags/Java/" style="font-size: 20px;">Java</a> <a href="/tags/Tools/" style="font-size: 10px;">Tools</a> <a href="/tags/blog/" style="font-size: 10px;">blog</a> <a href="/tags/database/" style="font-size: 10px;">database</a> <a href="/tags/design-pattern/" style="font-size: 10px;">design-pattern</a> <a href="/tags/jsp/" style="font-size: 10px;">jsp</a> <a href="/tags/随笔/" style="font-size: 10px;">随笔</a>
+    </div>
+  </div>
+
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">Archives</h3>
+    <div class="widget">
+      <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/archives/2019/01/">January 2019</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2018/12/">December 2018</a></li></ul>
+    </div>
+  </div>
+
+
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">Recent Posts</h3>
+    <div class="widget">
+      <ul>
+        
+          <li>
+            <a href="/2019/01/28/hello-world/">Hello World</a>
+          </li>
+        
+          <li>
+            <a href="/2019/01/22/Java多线程编程核心技术/">Java多线程编程核心技术</a>
+          </li>
+        
+          <li>
+            <a href="/2019/01/10/自定义注解的场景及实现/">自定义注解的场景及实现</a>
+          </li>
+        
+          <li>
+            <a href="/2019/01/09/Java面试题/">Java面试题一</a>
+          </li>
+        
+          <li>
+            <a href="/2019/01/04/Mysql语法总结/">Mysql语法总结</a>
+          </li>
+        
+      </ul>
+    </div>
+  </div>
+
+  
+</aside>
+        
+      </div>
+      <footer id="footer">
+  
+  <div class="outer">
+    <div id="footer-info" class="inner">
+      &copy; 2019 John Doe<br>
+      Powered by <a href="http://hexo.io/" target="_blank">Hexo</a>
+    </div>
+  </div>
+</footer>
+    </div>
+    <nav id="mobile-nav">
+  
+    <a href="/" class="mobile-nav-link">Home</a>
+  
+    <a href="/archives" class="mobile-nav-link">Archives</a>
+  
+</nav>
+    
+
+<script src="//ajax.googleapis.com/ajax/libs/jquery/2.0.3/jquery.min.js"></script>
+
+
+  <link rel="stylesheet" href="/fancybox/jquery.fancybox.css">
+  <script src="/fancybox/jquery.fancybox.pack.js"></script>
+
+
+<script src="/js/script.js"></script>
+
+
+
+  </div>
+</body>
+</html>

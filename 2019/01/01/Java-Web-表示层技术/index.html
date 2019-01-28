@@ -1,0 +1,227 @@
+<!DOCTYPE html>
+<html>
+<head><meta name="generator" content="Hexo 3.8.0">
+  <meta charset="utf-8">
+  
+
+  
+  <title>Java Web 表示层技术 | Hexo</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+  <meta name="description" content="Java Web 工作原理解析Http协议Web 服务器的缺陷Java Web 应用程序的组成Web 容器Tomcat介绍Servlet基础什么是Servlet">
+<meta name="keywords" content="jsp">
+<meta property="og:type" content="article">
+<meta property="og:title" content="Java Web 表示层技术">
+<meta property="og:url" content="https://silentwatson.github.io/2019/01/01/Java-Web-表示层技术/index.html">
+<meta property="og:site_name" content="Hexo">
+<meta property="og:description" content="Java Web 工作原理解析Http协议Web 服务器的缺陷Java Web 应用程序的组成Web 容器Tomcat介绍Servlet基础什么是Servlet">
+<meta property="og:locale" content="default">
+<meta property="og:updated_time" content="2019-01-01T11:50:21.861Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="Java Web 表示层技术">
+<meta name="twitter:description" content="Java Web 工作原理解析Http协议Web 服务器的缺陷Java Web 应用程序的组成Web 容器Tomcat介绍Servlet基础什么是Servlet">
+  
+    <link rel="alternate" href="/atom.xml" title="Hexo" type="application/atom+xml">
+  
+  
+    <link rel="icon" href="/favicon.png">
+  
+  
+    <link href="//fonts.googleapis.com/css?family=Source+Code+Pro" rel="stylesheet" type="text/css">
+  
+  <link rel="stylesheet" href="/css/style.css">
+</head>
+</html>
+<body>
+  <div id="container">
+    <div id="wrap">
+      <header id="header">
+  <div id="banner"></div>
+  <div id="header-outer" class="outer">
+    <div id="header-title" class="inner">
+      <h1 id="logo-wrap">
+        <a href="/" id="logo">Hexo</a>
+      </h1>
+      
+    </div>
+    <div id="header-inner" class="inner">
+      <nav id="main-nav">
+        <a id="main-nav-toggle" class="nav-icon"></a>
+        
+          <a class="main-nav-link" href="/">Home</a>
+        
+          <a class="main-nav-link" href="/archives">Archives</a>
+        
+      </nav>
+      <nav id="sub-nav">
+        
+          <a id="nav-rss-link" class="nav-icon" href="/atom.xml" title="RSS Feed"></a>
+        
+        <a id="nav-search-btn" class="nav-icon" title="Search"></a>
+      </nav>
+      <div id="search-form-wrap">
+        <form action="//google.com/search" method="get" accept-charset="UTF-8" class="search-form"><input type="search" name="q" class="search-form-input" placeholder="Search"><button type="submit" class="search-form-submit">&#xF002;</button><input type="hidden" name="sitesearch" value="https://silentwatson.github.io"></form>
+      </div>
+    </div>
+  </div>
+</header>
+      <div class="outer">
+        <section id="main"><article id="post-Java-Web-表示层技术" class="article article-type-post" itemscope="" itemprop="blogPost">
+  <div class="article-meta">
+    <a href="/2019/01/01/Java-Web-表示层技术/" class="article-date">
+  <time datetime="2019-01-01T10:41:28.000Z" itemprop="datePublished">2019-01-01</time>
+</a>
+    
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 class="article-title" itemprop="name">
+      Java Web 表示层技术
+    </h1>
+  
+
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <h2 id="Java-Web-工作原理"><a href="#Java-Web-工作原理" class="headerlink" title="Java Web 工作原理"></a>Java Web 工作原理</h2><h3 id="解析Http协议"><a href="#解析Http协议" class="headerlink" title="解析Http协议"></a>解析Http协议</h3><h3 id="Web-服务器的缺陷"><a href="#Web-服务器的缺陷" class="headerlink" title="Web 服务器的缺陷"></a>Web 服务器的缺陷</h3><h3 id="Java-Web-应用程序的组成"><a href="#Java-Web-应用程序的组成" class="headerlink" title="Java Web 应用程序的组成"></a>Java Web 应用程序的组成</h3><h3 id="Web-容器Tomcat介绍"><a href="#Web-容器Tomcat介绍" class="headerlink" title="Web 容器Tomcat介绍"></a>Web 容器Tomcat介绍</h3><h2 id="Servlet基础"><a href="#Servlet基础" class="headerlink" title="Servlet基础"></a>Servlet基础</h2><h3 id="什么是Servlet"><a href="#什么是Servlet" class="headerlink" title="什么是Servlet"></a>什么是Servlet</h3>
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="https://silentwatson.github.io/2019/01/01/Java-Web-表示层技术/" data-id="cjrfp2byy0005xgu5lyyjfb6j" class="article-share-link">Share</a>
+      
+      
+  <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/jsp/">jsp</a></li></ul>
+
+    </footer>
+  </div>
+  
+    
+<nav id="article-nav">
+  
+    <a href="/2019/01/01/Servlets-JSP/" id="article-nav-newer" class="article-nav-link-wrap">
+      <strong class="article-nav-caption">Newer</strong>
+      <div class="article-nav-title">
+        
+          Servlets&amp;JSP
+        
+      </div>
+    </a>
+  
+  
+    <a href="/2019/01/01/IntellJ-IDEA创建多模块maven工程/" id="article-nav-older" class="article-nav-link-wrap">
+      <strong class="article-nav-caption">Older</strong>
+      <div class="article-nav-title">IntellJ IDEA创建多模块maven工程</div>
+    </a>
+  
+</nav>
+
+  
+</article>
+
+</section>
+        
+          <aside id="sidebar">
+  
+    
+
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">Tags</h3>
+    <div class="widget">
+      <ul class="tag-list"><li class="tag-list-item"><a class="tag-list-link" href="/tags/Java/">Java</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Tools/">Tools</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/blog/">blog</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/database/">database</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/design-pattern/">design-pattern</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/jsp/">jsp</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/随笔/">随笔</a></li></ul>
+    </div>
+  </div>
+
+
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">Tag Cloud</h3>
+    <div class="widget tagcloud">
+      <a href="/tags/Java/" style="font-size: 20px;">Java</a> <a href="/tags/Tools/" style="font-size: 10px;">Tools</a> <a href="/tags/blog/" style="font-size: 10px;">blog</a> <a href="/tags/database/" style="font-size: 10px;">database</a> <a href="/tags/design-pattern/" style="font-size: 10px;">design-pattern</a> <a href="/tags/jsp/" style="font-size: 10px;">jsp</a> <a href="/tags/随笔/" style="font-size: 10px;">随笔</a>
+    </div>
+  </div>
+
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">Archives</h3>
+    <div class="widget">
+      <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/archives/2019/01/">January 2019</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2018/12/">December 2018</a></li></ul>
+    </div>
+  </div>
+
+
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">Recent Posts</h3>
+    <div class="widget">
+      <ul>
+        
+          <li>
+            <a href="/2019/01/28/hello-world/">Hello World</a>
+          </li>
+        
+          <li>
+            <a href="/2019/01/22/Java多线程编程核心技术/">Java多线程编程核心技术</a>
+          </li>
+        
+          <li>
+            <a href="/2019/01/10/自定义注解的场景及实现/">自定义注解的场景及实现</a>
+          </li>
+        
+          <li>
+            <a href="/2019/01/09/Java面试题/">Java面试题一</a>
+          </li>
+        
+          <li>
+            <a href="/2019/01/04/Mysql语法总结/">Mysql语法总结</a>
+          </li>
+        
+      </ul>
+    </div>
+  </div>
+
+  
+</aside>
+        
+      </div>
+      <footer id="footer">
+  
+  <div class="outer">
+    <div id="footer-info" class="inner">
+      &copy; 2019 John Doe<br>
+      Powered by <a href="http://hexo.io/" target="_blank">Hexo</a>
+    </div>
+  </div>
+</footer>
+    </div>
+    <nav id="mobile-nav">
+  
+    <a href="/" class="mobile-nav-link">Home</a>
+  
+    <a href="/archives" class="mobile-nav-link">Archives</a>
+  
+</nav>
+    
+
+<script src="//ajax.googleapis.com/ajax/libs/jquery/2.0.3/jquery.min.js"></script>
+
+
+  <link rel="stylesheet" href="/fancybox/jquery.fancybox.css">
+  <script src="/fancybox/jquery.fancybox.pack.js"></script>
+
+
+<script src="/js/script.js"></script>
+
+
+
+  </div>
+</body>
+</html>

@@ -1,0 +1,337 @@
+<!DOCTYPE html>
+<html>
+<head><meta name="generator" content="Hexo 3.8.0">
+  <meta charset="utf-8">
+  
+
+  
+  <title>Mysql语法总结 | Hexo</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+  <meta name="description" content="创建数据库1create database database_name; 删除数据库1drop database database_name; 选择数据库1use database_name; Mysql数据类型数值类型   type Byte usage     tinyint 1 小整数值   smallint 2 大整数值   mediumint 3 大整数值   int或integer 4">
+<meta name="keywords" content="database">
+<meta property="og:type" content="article">
+<meta property="og:title" content="Mysql语法总结">
+<meta property="og:url" content="https://silentwatson.github.io/2019/01/04/Mysql语法总结/index.html">
+<meta property="og:site_name" content="Hexo">
+<meta property="og:description" content="创建数据库1create database database_name; 删除数据库1drop database database_name; 选择数据库1use database_name; Mysql数据类型数值类型   type Byte usage     tinyint 1 小整数值   smallint 2 大整数值   mediumint 3 大整数值   int或integer 4">
+<meta property="og:locale" content="default">
+<meta property="og:updated_time" content="2019-01-07T15:06:21.810Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="Mysql语法总结">
+<meta name="twitter:description" content="创建数据库1create database database_name; 删除数据库1drop database database_name; 选择数据库1use database_name; Mysql数据类型数值类型   type Byte usage     tinyint 1 小整数值   smallint 2 大整数值   mediumint 3 大整数值   int或integer 4">
+  
+    <link rel="alternate" href="/atom.xml" title="Hexo" type="application/atom+xml">
+  
+  
+    <link rel="icon" href="/favicon.png">
+  
+  
+    <link href="//fonts.googleapis.com/css?family=Source+Code+Pro" rel="stylesheet" type="text/css">
+  
+  <link rel="stylesheet" href="/css/style.css">
+</head>
+</html>
+<body>
+  <div id="container">
+    <div id="wrap">
+      <header id="header">
+  <div id="banner"></div>
+  <div id="header-outer" class="outer">
+    <div id="header-title" class="inner">
+      <h1 id="logo-wrap">
+        <a href="/" id="logo">Hexo</a>
+      </h1>
+      
+    </div>
+    <div id="header-inner" class="inner">
+      <nav id="main-nav">
+        <a id="main-nav-toggle" class="nav-icon"></a>
+        
+          <a class="main-nav-link" href="/">Home</a>
+        
+          <a class="main-nav-link" href="/archives">Archives</a>
+        
+      </nav>
+      <nav id="sub-nav">
+        
+          <a id="nav-rss-link" class="nav-icon" href="/atom.xml" title="RSS Feed"></a>
+        
+        <a id="nav-search-btn" class="nav-icon" title="Search"></a>
+      </nav>
+      <div id="search-form-wrap">
+        <form action="//google.com/search" method="get" accept-charset="UTF-8" class="search-form"><input type="search" name="q" class="search-form-input" placeholder="Search"><button type="submit" class="search-form-submit">&#xF002;</button><input type="hidden" name="sitesearch" value="https://silentwatson.github.io"></form>
+      </div>
+    </div>
+  </div>
+</header>
+      <div class="outer">
+        <section id="main"><article id="post-Mysql语法总结" class="article article-type-post" itemscope="" itemprop="blogPost">
+  <div class="article-meta">
+    <a href="/2019/01/04/Mysql语法总结/" class="article-date">
+  <time datetime="2019-01-04T15:11:57.000Z" itemprop="datePublished">2019-01-04</time>
+</a>
+    
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 class="article-title" itemprop="name">
+      Mysql语法总结
+    </h1>
+  
+
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <h3 id="创建数据库"><a href="#创建数据库" class="headerlink" title="创建数据库"></a>创建数据库</h3><figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">create</span> <span class="keyword">database</span> database_name;</span><br></pre></td></tr></table></figure>
+<h3 id="删除数据库"><a href="#删除数据库" class="headerlink" title="删除数据库"></a>删除数据库</h3><figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">drop</span> <span class="keyword">database</span> database_name;</span><br></pre></td></tr></table></figure>
+<h3 id="选择数据库"><a href="#选择数据库" class="headerlink" title="选择数据库"></a>选择数据库</h3><figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">use</span> database_name;</span><br></pre></td></tr></table></figure>
+<h3 id="Mysql数据类型"><a href="#Mysql数据类型" class="headerlink" title="Mysql数据类型"></a>Mysql数据类型</h3><h4 id="数值类型"><a href="#数值类型" class="headerlink" title="数值类型"></a>数值类型</h4><table>
+<thead>
+<tr>
+<th>type</th>
+<th style="text-align:center">Byte</th>
+<th style="text-align:right">usage</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>tinyint</td>
+<td style="text-align:center">1</td>
+<td style="text-align:right">小整数值</td>
+</tr>
+<tr>
+<td>smallint</td>
+<td style="text-align:center">2</td>
+<td style="text-align:right">大整数值</td>
+</tr>
+<tr>
+<td>mediumint</td>
+<td style="text-align:center">3</td>
+<td style="text-align:right">大整数值</td>
+</tr>
+<tr>
+<td>int或integer</td>
+<td style="text-align:center">4</td>
+<td style="text-align:right">大整数值</td>
+</tr>
+<tr>
+<td>bigint</td>
+<td style="text-align:center">8</td>
+<td style="text-align:right">极大整数值</td>
+</tr>
+<tr>
+<td>float</td>
+<td style="text-align:center">4</td>
+<td style="text-align:right">单精度浮点型</td>
+</tr>
+<tr>
+<td>double</td>
+<td style="text-align:center">8</td>
+<td style="text-align:right">双精度浮点型</td>
+</tr>
+<tr>
+<td>decimal</td>
+<td style="text-align:center">对decimal(m,d),为max(m,d)+2</td>
+<td style="text-align:right">要求精度的小数值</td>
+</tr>
+</tbody>
+</table>
+<h4 id="日期和时间类型"><a href="#日期和时间类型" class="headerlink" title="日期和时间类型"></a>日期和时间类型</h4><h4 id="字符串类型"><a href="#字符串类型" class="headerlink" title="字符串类型"></a>字符串类型</h4><h4 id="二进制类型"><a href="#二进制类型" class="headerlink" title="二进制类型"></a>二进制类型</h4><table>
+<thead>
+<tr>
+<th>type</th>
+<th style="text-align:center">Byte</th>
+<th style="text-align:right">usage</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>binary(n)</td>
+<td style="text-align:center">n</td>
+<td style="text-align:right">较短的二进制数</td>
+</tr>
+<tr>
+<td>varbinary(n)</td>
+<td style="text-align:center">实际占用的字节数</td>
+<td style="text-align:right">较长的二进制数</td>
+</tr>
+<tr>
+<td>bit(n)</td>
+<td style="text-align:center">n</td>
+<td style="text-align:right">短二进制数</td>
+</tr>
+<tr>
+<td>tinyblob</td>
+<td style="text-align:center">实际占用的字节数</td>
+<td style="text-align:right">较短的二进制数</td>
+</tr>
+<tr>
+<td>blob</td>
+<td style="text-align:center">实际占用的字节数</td>
+<td style="text-align:right">图片、声音等文件</td>
+</tr>
+<tr>
+<td>mediumblob</td>
+<td style="text-align:center">实际占用的字节数</td>
+<td style="text-align:right">图片、声音、视频等文件</td>
+</tr>
+<tr>
+<td>longblob</td>
+<td style="text-align:center">实际占用的字节数</td>
+<td style="text-align:right">图片、声音、视频等文件</td>
+</tr>
+</tbody>
+</table>
+<h3 id="创建数据表"><a href="#创建数据表" class="headerlink" title="创建数据表"></a>创建数据表</h3><figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">create</span> <span class="keyword">table</span> table_name(column_name column_type);</span><br></pre></td></tr></table></figure>
+<p>示例：<br><figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">create</span> <span class="keyword">table</span> <span class="keyword">if</span> <span class="keyword">not</span> <span class="keyword">exists</span> example_table(</span><br><span class="line">  example_id <span class="built_in">int</span> <span class="keyword">unsigned</span> auto_increment,</span><br><span class="line">  example_title <span class="built_in">varchar</span>(<span class="number">100</span>) <span class="keyword">not</span> <span class="literal">null</span>,</span><br><span class="line">  example_date <span class="built_in">date</span>,</span><br><span class="line">  primary <span class="keyword">key</span>(example_id)</span><br><span class="line">) <span class="keyword">engine</span>=<span class="keyword">innodb</span> <span class="keyword">default</span> <span class="keyword">charset</span>=utf8 ;</span><br></pre></td></tr></table></figure></p>
+<h3 id="删除数据表"><a href="#删除数据表" class="headerlink" title="删除数据表"></a>删除数据表</h3><figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">drop</span> <span class="keyword">table</span> table_name;</span><br></pre></td></tr></table></figure>
+<h3 id="插入数据"><a href="#插入数据" class="headerlink" title="插入数据"></a>插入数据</h3><figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">insert</span> <span class="keyword">into</span> table_name</span><br><span class="line">  (field1, field2, ...fieldn)</span><br><span class="line">  <span class="keyword">values</span></span><br><span class="line">  (value1, value2, ...valuen);</span><br></pre></td></tr></table></figure>
+<h3 id="查询语句"><a href="#查询语句" class="headerlink" title="查询语句"></a>查询语句</h3><figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">select</span> column_name, column_name <span class="keyword">from</span> table_name</span><br><span class="line">[<span class="keyword">where</span> clause]</span><br><span class="line">[<span class="keyword">limit</span> N] [<span class="keyword">offset</span> M];</span><br></pre></td></tr></table></figure>
+<h4 id="where子句"><a href="#where子句" class="headerlink" title="where子句"></a>where子句</h4><figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">select</span> column_name, column_name <span class="keyword">from</span> table_name</span><br><span class="line"><span class="keyword">where</span> condition1 <span class="keyword">and</span>/<span class="keyword">or</span> condition2 ...</span><br><span class="line">[<span class="keyword">limit</span> N] [<span class="keyword">offset</span> M];</span><br></pre></td></tr></table></figure>
+<h4 id="分页语句"><a href="#分页语句" class="headerlink" title="分页语句"></a>分页语句</h4><p>N代表每页显示row的数量，M代表偏移量，M =（当前第几页 - 1）* N</p>
+<h3 id="update语句"><a href="#update语句" class="headerlink" title="update语句"></a>update语句</h3><figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">update</span> table_name <span class="keyword">set</span> field1=new_value1, field2=new_value2 ...</span><br><span class="line">[<span class="keyword">where</span> clause];</span><br></pre></td></tr></table></figure>
+<h3 id="delete语句"><a href="#delete语句" class="headerlink" title="delete语句"></a>delete语句</h3><figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">delete</span> <span class="keyword">from</span> table_name [<span class="keyword">where</span> clause];</span><br></pre></td></tr></table></figure>
+<h4 id="truncate-delete-drop比较"><a href="#truncate-delete-drop比较" class="headerlink" title="truncate delete drop比较"></a>truncate delete drop比较</h4><figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">-- 删除该表所有row，不会在日志中记录删除内容，效率较高，</span></span><br><span class="line"><span class="comment">--新增记录主键从初始值开始重新自增长</span></span><br><span class="line"><span class="keyword">truncate</span> <span class="keyword">table</span> table_name;</span><br><span class="line"><span class="comment">-- 删除该表匹配的row（某行或全部），在日志中记录删除内容</span></span><br><span class="line"><span class="comment">-- 新增记录主键继续自增长</span></span><br><span class="line"><span class="keyword">delete</span> <span class="keyword">from</span> table_name [<span class="keyword">where</span> clause];</span><br><span class="line"><span class="comment">-- drop将会删除表的所有内容</span></span><br><span class="line"><span class="keyword">drop</span> <span class="keyword">table</span> table_name;</span><br></pre></td></tr></table></figure>
+
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="https://silentwatson.github.io/2019/01/04/Mysql语法总结/" data-id="cjrfp2bz3000axgu5oph0yptr" class="article-share-link">Share</a>
+      
+      
+  <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/database/">database</a></li></ul>
+
+    </footer>
+  </div>
+  
+    
+<nav id="article-nav">
+  
+    <a href="/2019/01/09/Java面试题/" id="article-nav-newer" class="article-nav-link-wrap">
+      <strong class="article-nav-caption">Newer</strong>
+      <div class="article-nav-title">
+        
+          Java面试题一
+        
+      </div>
+    </a>
+  
+  
+    <a href="/2019/01/02/desing-pattern-proxy-protect/" id="article-nav-older" class="article-nav-link-wrap">
+      <strong class="article-nav-caption">Older</strong>
+      <div class="article-nav-title">desing-pattern-proxy-protect</div>
+    </a>
+  
+</nav>
+
+  
+</article>
+
+</section>
+        
+          <aside id="sidebar">
+  
+    
+
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">Tags</h3>
+    <div class="widget">
+      <ul class="tag-list"><li class="tag-list-item"><a class="tag-list-link" href="/tags/Java/">Java</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Tools/">Tools</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/blog/">blog</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/database/">database</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/design-pattern/">design-pattern</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/jsp/">jsp</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/随笔/">随笔</a></li></ul>
+    </div>
+  </div>
+
+
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">Tag Cloud</h3>
+    <div class="widget tagcloud">
+      <a href="/tags/Java/" style="font-size: 20px;">Java</a> <a href="/tags/Tools/" style="font-size: 10px;">Tools</a> <a href="/tags/blog/" style="font-size: 10px;">blog</a> <a href="/tags/database/" style="font-size: 10px;">database</a> <a href="/tags/design-pattern/" style="font-size: 10px;">design-pattern</a> <a href="/tags/jsp/" style="font-size: 10px;">jsp</a> <a href="/tags/随笔/" style="font-size: 10px;">随笔</a>
+    </div>
+  </div>
+
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">Archives</h3>
+    <div class="widget">
+      <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/archives/2019/01/">January 2019</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2018/12/">December 2018</a></li></ul>
+    </div>
+  </div>
+
+
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">Recent Posts</h3>
+    <div class="widget">
+      <ul>
+        
+          <li>
+            <a href="/2019/01/28/hello-world/">Hello World</a>
+          </li>
+        
+          <li>
+            <a href="/2019/01/22/Java多线程编程核心技术/">Java多线程编程核心技术</a>
+          </li>
+        
+          <li>
+            <a href="/2019/01/10/自定义注解的场景及实现/">自定义注解的场景及实现</a>
+          </li>
+        
+          <li>
+            <a href="/2019/01/09/Java面试题/">Java面试题一</a>
+          </li>
+        
+          <li>
+            <a href="/2019/01/04/Mysql语法总结/">Mysql语法总结</a>
+          </li>
+        
+      </ul>
+    </div>
+  </div>
+
+  
+</aside>
+        
+      </div>
+      <footer id="footer">
+  
+  <div class="outer">
+    <div id="footer-info" class="inner">
+      &copy; 2019 John Doe<br>
+      Powered by <a href="http://hexo.io/" target="_blank">Hexo</a>
+    </div>
+  </div>
+</footer>
+    </div>
+    <nav id="mobile-nav">
+  
+    <a href="/" class="mobile-nav-link">Home</a>
+  
+    <a href="/archives" class="mobile-nav-link">Archives</a>
+  
+</nav>
+    
+
+<script src="//ajax.googleapis.com/ajax/libs/jquery/2.0.3/jquery.min.js"></script>
+
+
+  <link rel="stylesheet" href="/fancybox/jquery.fancybox.css">
+  <script src="/fancybox/jquery.fancybox.pack.js"></script>
+
+
+<script src="/js/script.js"></script>
+
+
+
+  </div>
+</body>
+</html>
