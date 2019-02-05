@@ -79,18 +79,18 @@
 
 
 
-<meta name="description" content="Java多线程技能进程和多线程的概念和线程的优点 进程进程是操作系统, 是一次程序的执行； 是一个程序及其数据在处理机上依此执行时所发生的活动；是程序在一个数据集合上运行的过程，他是系统进行资源分配和调度的一个独立单位。线程线程中独立运行的子任务。  线程的优点：增加cpu利用率 使用多线程使用Thread类使用Runnable接口实例变量与共享安全留意i--与System.out.println">
+<meta name="description" content="Java多线程技能进程和多线程的概念和线程的优点 进程是操作系统, 是一次程序的执行； 是一个程序及其数据在处理机上依此执行时所发生的活动；是程序在一个数据集合上运行的过程，他是系统进行资源分配和调度的一个独立单位。   线程是进程中独立运行的子任务。  线程的优点：增加cpu利用率 使用多线程使用Thread类使用Runnable接口实例变量与共享安全留意i--与System.out.print">
 <meta name="keywords" content="Java">
 <meta property="og:type" content="article">
 <meta property="og:title" content="Java多线程编程核心技术">
 <meta property="og:url" content="https://SilentWatson.github.io/2019/01/22/Java多线程编程核心技术/index.html">
 <meta property="og:site_name" content="世界上只有一种英雄主义，就是看清生活的真相之后依然热爱生活。">
-<meta property="og:description" content="Java多线程技能进程和多线程的概念和线程的优点 进程进程是操作系统, 是一次程序的执行； 是一个程序及其数据在处理机上依此执行时所发生的活动；是程序在一个数据集合上运行的过程，他是系统进行资源分配和调度的一个独立单位。线程线程中独立运行的子任务。  线程的优点：增加cpu利用率 使用多线程使用Thread类使用Runnable接口实例变量与共享安全留意i--与System.out.println">
+<meta property="og:description" content="Java多线程技能进程和多线程的概念和线程的优点 进程是操作系统, 是一次程序的执行； 是一个程序及其数据在处理机上依此执行时所发生的活动；是程序在一个数据集合上运行的过程，他是系统进行资源分配和调度的一个独立单位。   线程是进程中独立运行的子任务。  线程的优点：增加cpu利用率 使用多线程使用Thread类使用Runnable接口实例变量与共享安全留意i--与System.out.print">
 <meta property="og:locale" content="default">
-<meta property="og:updated_time" content="2019-02-05T02:11:40.838Z">
+<meta property="og:updated_time" content="2019-02-05T02:17:24.182Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="Java多线程编程核心技术">
-<meta name="twitter:description" content="Java多线程技能进程和多线程的概念和线程的优点 进程进程是操作系统, 是一次程序的执行； 是一个程序及其数据在处理机上依此执行时所发生的活动；是程序在一个数据集合上运行的过程，他是系统进行资源分配和调度的一个独立单位。线程线程中独立运行的子任务。  线程的优点：增加cpu利用率 使用多线程使用Thread类使用Runnable接口实例变量与共享安全留意i--与System.out.println">
+<meta name="twitter:description" content="Java多线程技能进程和多线程的概念和线程的优点 进程是操作系统, 是一次程序的执行； 是一个程序及其数据在处理机上依此执行时所发生的活动；是程序在一个数据集合上运行的过程，他是系统进行资源分配和调度的一个独立单位。   线程是进程中独立运行的子任务。  线程的优点：增加cpu利用率 使用多线程使用Thread类使用Runnable接口实例变量与共享安全留意i--与System.out.print">
 
 
 
@@ -308,7 +308,7 @@
               
                 <span class="post-meta-item-text">Post modified&#58;</span>
               
-              <time title="Post modified" itemprop="dateModified" datetime="2019-02-05T10:11:40+08:00">
+              <time title="Post modified" itemprop="dateModified" datetime="2019-02-05T10:17:24+08:00">
                 2019-02-05
               </time>
             
@@ -365,7 +365,10 @@
 
       
         <h1 id="Java多线程技能"><a href="#Java多线程技能" class="headerlink" title="Java多线程技能"></a>Java多线程技能</h1><h2 id="进程和多线程的概念和线程的优点"><a href="#进程和多线程的概念和线程的优点" class="headerlink" title="进程和多线程的概念和线程的优点"></a>进程和多线程的概念和线程的优点</h2><blockquote>
-<p><b>进程</b><br><br>进程是操作系统, 是一次程序的执行； 是一个程序及其数据在处理机上依此执行时所发生的活动；是程序在一个数据集合上运行的过程，他是系统进行资源分配和调度的一个独立单位。<br><br><b>线程</b><br><br>线程中独立运行的子任务。</p>
+<p><b>进程</b><br>是操作系统, 是一次程序的执行； 是一个程序及其数据在处理机上依此执行时所发生的活动；是程序在一个数据集合上运行的过程，他是系统进行资源分配和调度的一个独立单位。</p>
+</blockquote>
+<blockquote>
+<p><b>线程</b><br>是进程中独立运行的子任务。</p>
 </blockquote>
 <p>线程的优点：增加cpu利用率</p>
 <h2 id="使用多线程"><a href="#使用多线程" class="headerlink" title="使用多线程"></a>使用多线程</h2><h3 id="使用Thread类"><a href="#使用Thread类" class="headerlink" title="使用Thread类"></a>使用Thread类</h3><h3 id="使用Runnable接口"><a href="#使用Runnable接口" class="headerlink" title="使用Runnable接口"></a>使用Runnable接口</h3><h3 id="实例变量与共享安全"><a href="#实例变量与共享安全" class="headerlink" title="实例变量与共享安全"></a>实例变量与共享安全</h3><h3 id="留意i-与System-out-println-的异常"><a href="#留意i-与System-out-println-的异常" class="headerlink" title="留意i--与System.out.println()的异常"></a>留意<code>i--</code>与<code>System.out.println()</code>的异常</h3><h3 id="concurrentThread-方法"><a href="#concurrentThread-方法" class="headerlink" title="concurrentThread()方法"></a><code>concurrentThread()</code>方法</h3><h3 id="isAlive-方法"><a href="#isAlive-方法" class="headerlink" title="isAlive()方法"></a><code>isAlive()</code>方法</h3><h3 id="sleep-方法"><a href="#sleep-方法" class="headerlink" title="sleep()方法"></a><code>sleep()</code>方法</h3><h3 id="getId-方法"><a href="#getId-方法" class="headerlink" title="getId()方法"></a><code>getId()</code>方法</h3><h1 id="对象及变量的并发访问"><a href="#对象及变量的并发访问" class="headerlink" title="对象及变量的并发访问"></a>对象及变量的并发访问</h1><h1 id="线程间通信"><a href="#线程间通信" class="headerlink" title="线程间通信"></a>线程间通信</h1><blockquote>
