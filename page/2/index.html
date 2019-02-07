@@ -259,6 +259,247 @@
   
   
   <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="https://SilentWatson.github.io/2019/01/04/Mysql语法总结/">
+
+    <span hidden itemprop="author" itemscope="" itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="Silent Watson">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="/images/avatar.gif">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope="" itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="世界上只有一种英雄主义，就是看清生活的真相之后依然热爱生活。">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+                
+                <a class="post-title-link" href="/2019/01/04/Mysql语法总结/" itemprop="url">Mysql语法总结</a></h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">Posted on</span>
+              
+              <time title="Post created" itemprop="dateCreated datePublished" datetime="2019-01-04T23:11:57+08:00">
+                2019-01-04
+              </time>
+            
+
+            
+              <span class="post-meta-divider">|</span>
+            
+
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-check-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">Post modified&#58;</span>
+              
+              <time title="Post modified" itemprop="dateModified" datetime="2019-01-07T23:06:21+08:00">
+                2019-01-07
+              </time>
+            
+          </span>
+
+          
+
+          
+            
+          
+
+          
+          
+
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        
+          
+            <h3 id="创建数据库"><a href="#创建数据库" class="headerlink" title="创建数据库"></a>创建数据库</h3><figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">create</span> <span class="keyword">database</span> database_name;</span><br></pre></td></tr></table></figure>
+<h3 id="删除数据库"><a href="#删除数据库" class="headerlink" title="删除数据库"></a>删除数据库</h3><figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">drop</span> <span class="keyword">database</span> database_name;</span><br></pre></td></tr></table></figure>
+<h3 id="选择数据库"><a href="#选择数据库" class="headerlink" title="选择数据库"></a>选择数据库</h3><figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">use</span> database_name;</span><br></pre></td></tr></table></figure>
+<h3 id="Mysql数据类型"><a href="#Mysql数据类型" class="headerlink" title="Mysql数据类型"></a>Mysql数据类型</h3><h4 id="数值类型"><a href="#数值类型" class="headerlink" title="数值类型"></a>数值类型</h4><table>
+<thead>
+<tr>
+<th>type</th>
+<th style="text-align:center">Byte</th>
+<th style="text-align:right">usage</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>tinyint</td>
+<td style="text-align:center">1</td>
+<td style="text-align:right">小整数值</td>
+</tr>
+<tr>
+<td>smallint</td>
+<td style="text-align:center">2</td>
+<td style="text-align:right">大整数值</td>
+</tr>
+<tr>
+<td>mediumint</td>
+<td style="text-align:center">3</td>
+<td style="text-align:right">大整数值</td>
+</tr>
+<tr>
+<td>int或integer</td>
+<td style="text-align:center">4</td>
+<td style="text-align:right">大整数值</td>
+</tr>
+<tr>
+<td>bigint</td>
+<td style="text-align:center">8</td>
+<td style="text-align:right">极大整数值</td>
+</tr>
+<tr>
+<td>float</td>
+<td style="text-align:center">4</td>
+<td style="text-align:right">单精度浮点型</td>
+</tr>
+<tr>
+<td>double</td>
+<td style="text-align:center">8</td>
+<td style="text-align:right">双精度浮点型</td>
+</tr>
+<tr>
+<td>decimal</td>
+<td style="text-align:center">对decimal(m,d),为max(m,d)+2</td>
+<td style="text-align:right">要求精度的小数值</td>
+</tr>
+</tbody>
+</table>
+<h4 id="日期和时间类型"><a href="#日期和时间类型" class="headerlink" title="日期和时间类型"></a>日期和时间类型</h4><h4 id="字符串类型"><a href="#字符串类型" class="headerlink" title="字符串类型"></a>字符串类型</h4><h4 id="二进制类型"><a href="#二进制类型" class="headerlink" title="二进制类型"></a>二进制类型</h4><table>
+<thead>
+<tr>
+<th>type</th>
+<th style="text-align:center">Byte</th>
+<th style="text-align:right">usage</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>binary(n)</td>
+<td style="text-align:center">n</td>
+<td style="text-align:right">较短的二进制数</td>
+</tr>
+<tr>
+<td>varbinary(n)</td>
+<td style="text-align:center">实际占用的字节数</td>
+<td style="text-align:right">较长的二进制数</td>
+</tr>
+<tr>
+<td>bit(n)</td>
+<td style="text-align:center">n</td>
+<td style="text-align:right">短二进制数</td>
+</tr>
+<tr>
+<td>tinyblob</td>
+<td style="text-align:center">实际占用的字节数</td>
+<td style="text-align:right">较短的二进制数</td>
+</tr>
+<tr>
+<td>blob</td>
+<td style="text-align:center">实际占用的字节数</td>
+<td style="text-align:right">图片、声音等文件</td>
+</tr>
+<tr>
+<td>mediumblob</td>
+<td style="text-align:center">实际占用的字节数</td>
+<td style="text-align:right">图片、声音、视频等文件</td>
+</tr>
+<tr>
+<td>longblob</td>
+<td style="text-align:center">实际占用的字节数</td>
+<td style="text-align:right">图片、声音、视频等文件</td>
+</tr>
+</tbody>
+</table>
+<h3 id="创建数据表"><a href="#创建数据表" class="headerlink" title="创建数据表"></a>创建数据表</h3><figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">create</span> <span class="keyword">table</span> table_name(column_name column_type);</span><br></pre></td></tr></table></figure>
+<p>示例：<br><figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">create</span> <span class="keyword">table</span> <span class="keyword">if</span> <span class="keyword">not</span> <span class="keyword">exists</span> example_table(</span><br><span class="line">  example_id <span class="built_in">int</span> <span class="keyword">unsigned</span> auto_increment,</span><br><span class="line">  example_title <span class="built_in">varchar</span>(<span class="number">100</span>) <span class="keyword">not</span> <span class="literal">null</span>,</span><br><span class="line">  example_date <span class="built_in">date</span>,</span><br><span class="line">  primary <span class="keyword">key</span>(example_id)</span><br><span class="line">) <span class="keyword">engine</span>=<span class="keyword">innodb</span> <span class="keyword">default</span> <span class="keyword">charset</span>=utf8 ;</span><br></pre></td></tr></table></figure></p>
+<h3 id="删除数据表"><a href="#删除数据表" class="headerlink" title="删除数据表"></a>删除数据表</h3><figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">drop</span> <span class="keyword">table</span> table_name;</span><br></pre></td></tr></table></figure>
+<h3 id="插入数据"><a href="#插入数据" class="headerlink" title="插入数据"></a>插入数据</h3><figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">insert</span> <span class="keyword">into</span> table_name</span><br><span class="line">  (field1, field2, ...fieldn)</span><br><span class="line">  <span class="keyword">values</span></span><br><span class="line">  (value1, value2, ...valuen);</span><br></pre></td></tr></table></figure>
+<h3 id="查询语句"><a href="#查询语句" class="headerlink" title="查询语句"></a>查询语句</h3><figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">select</span> column_name, column_name <span class="keyword">from</span> table_name</span><br><span class="line">[<span class="keyword">where</span> clause]</span><br><span class="line">[<span class="keyword">limit</span> N] [<span class="keyword">offset</span> M];</span><br></pre></td></tr></table></figure>
+<h4 id="where子句"><a href="#where子句" class="headerlink" title="where子句"></a>where子句</h4><figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">select</span> column_name, column_name <span class="keyword">from</span> table_name</span><br><span class="line"><span class="keyword">where</span> condition1 <span class="keyword">and</span>/<span class="keyword">or</span> condition2 ...</span><br><span class="line">[<span class="keyword">limit</span> N] [<span class="keyword">offset</span> M];</span><br></pre></td></tr></table></figure>
+<h4 id="分页语句"><a href="#分页语句" class="headerlink" title="分页语句"></a>分页语句</h4><p>N代表每页显示row的数量，M代表偏移量，M =（当前第几页 - 1）* N</p>
+<h3 id="update语句"><a href="#update语句" class="headerlink" title="update语句"></a>update语句</h3><figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">update</span> table_name <span class="keyword">set</span> field1=new_value1, field2=new_value2 ...</span><br><span class="line">[<span class="keyword">where</span> clause];</span><br></pre></td></tr></table></figure>
+<h3 id="delete语句"><a href="#delete语句" class="headerlink" title="delete语句"></a>delete语句</h3><figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">delete</span> <span class="keyword">from</span> table_name [<span class="keyword">where</span> clause];</span><br></pre></td></tr></table></figure>
+<h4 id="truncate-delete-drop比较"><a href="#truncate-delete-drop比较" class="headerlink" title="truncate delete drop比较"></a>truncate delete drop比较</h4><figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">-- 删除该表所有row，不会在日志中记录删除内容，效率较高，</span></span><br><span class="line"><span class="comment">--新增记录主键从初始值开始重新自增长</span></span><br><span class="line"><span class="keyword">truncate</span> <span class="keyword">table</span> table_name;</span><br><span class="line"><span class="comment">-- 删除该表匹配的row（某行或全部），在日志中记录删除内容</span></span><br><span class="line"><span class="comment">-- 新增记录主键继续自增长</span></span><br><span class="line"><span class="keyword">delete</span> <span class="keyword">from</span> table_name [<span class="keyword">where</span> clause];</span><br><span class="line"><span class="comment">-- drop将会删除表的所有内容</span></span><br><span class="line"><span class="keyword">drop</span> <span class="keyword">table</span> table_name;</span><br></pre></td></tr></table></figure>
+
+          
+        
+      
+    </div>
+    
+    
+    
+
+    
+
+    
+
+    
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+    
+      
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal" itemscope="" itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
     <link itemprop="mainEntityOfPage" href="https://SilentWatson.github.io/2019/01/02/desing-pattern-proxy-protect/">
 
     <span hidden itemprop="author" itemscope="" itemtype="http://schema.org/Person">
@@ -1224,7 +1465,7 @@
               
                 <a href="/archives/">
               
-                  <span class="site-state-item-count">17</span>
+                  <span class="site-state-item-count">18</span>
                   <span class="site-state-item-name">posts</span>
                 </a>
               </div>
@@ -1246,7 +1487,7 @@
               
               <div class="site-state-item site-state-tags">
                 <a href="/tags/index.html">
-                  <span class="site-state-item-count">9</span>
+                  <span class="site-state-item-count">10</span>
                   <span class="site-state-item-name">tags</span>
                 </a>
               </div>
