@@ -259,6 +259,311 @@
   
   
   <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="https://SilentWatson.github.io/2019/01/10/自定义注解的场景及实现/">
+
+    <span hidden itemprop="author" itemscope="" itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="Silent Watson">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="/images/avatar.gif">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope="" itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="世界上只有一种英雄主义，就是看清生活的真相之后依然热爱生活。">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+                
+                <a class="post-title-link" href="/2019/01/10/自定义注解的场景及实现/" itemprop="url">自定义注解的场景及实现</a></h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">Posted on</span>
+              
+              <time title="Post created" itemprop="dateCreated datePublished" datetime="2019-01-10T21:14:33+08:00">
+                2019-01-10
+              </time>
+            
+
+            
+              <span class="post-meta-divider">|</span>
+            
+
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-check-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">Post modified&#58;</span>
+              
+              <time title="Post modified" itemprop="dateModified" datetime="2019-01-29T07:24:26+08:00">
+                2019-01-29
+              </time>
+            
+          </span>
+
+          
+            <span class="post-category">
+            
+              <span class="post-meta-divider">|</span>
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">In</span>
+              
+              
+                <span itemprop="about" itemscope="" itemtype="http://schema.org/Thing">
+                  <a href="/categories/Programming-Language/" itemprop="url" rel="index">
+                    <span itemprop="name">Programming Language</span>
+                  </a>
+                </span>
+
+                
+                
+              
+            </span>
+          
+
+          
+            
+          
+
+          
+          
+
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        
+          
+            <h3 id="自定义注解使用场景"><a href="#自定义注解使用场景" class="headerlink" title="自定义注解使用场景"></a>自定义注解使用场景</h3><ul>
+<li>类属性自动赋值</li>
+<li>验证对象属性完整性</li>
+<li>代替配置文件功能（例如spring基于注解的配置）</li>
+<li>可以生成文档（例如javadoc的@see@param）<h3 id="自定义注解的实现"><a href="#自定义注解的实现" class="headerlink" title="自定义注解的实现"></a>自定义注解的实现</h3><blockquote>
+<p>注解是插入到源码中使用其他工具可以对其进行处理的<b>标签</b></p>
+</blockquote>
+<h4 id="下面是一个简单注解的实例"><a href="#下面是一个简单注解的实例" class="headerlink" title="下面是一个简单注解的实例"></a>下面是一个简单注解的实例</h4><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">MyClass</span></span>&#123;</span><br><span class="line">    ...</span><br><span class="line">    <span class="meta">@Test</span> <span class="function">pulbic <span class="keyword">void</span> <span class="title">checkRandomInsertions</span><span class="params">()</span></span></span><br><span class="line"><span class="function">&#125;</span></span><br></pre></td></tr></table></figure>
+</li>
+</ul>
+<p>&emsp;&emsp;在java中，注解是当作一个修饰符来使用的，它被置于注解项之前，中间没有分号；注解是代码的一部分<br>&emsp;&emsp;@Test 注解本身并不会做任何事情，它需要工具支持才会有用。例如，当测试一个类的时候，JUnit4 测试工具可能会调用所有标识为@Test 的方法。另一个工具可能会删除一个类文件的所有测试方法，以便在对这个类测试完毕后，不会将这些测试方法和程序装载在一起。<br>&emsp;&emsp;注解可以定义成包含元素的形式，例如：<br><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">@Test</span>(timeout= <span class="string">"10000"</span>)</span><br></pre></td></tr></table></figure></p>
+<p>每个注解都必须通过一个注解接口进行定义。这些接口中的方法与注解中的元素相对应。例如，Junit 的注解Test可以用下面这个接口进行定义：<br><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">@Target</span>(ElementType.METHOD)</span><br><span class="line"><span class="meta">@Retention</span>(RetentionPolicy.RUNTIME)</span><br><span class="line"><span class="keyword">public</span> <span class="meta">@interface</span> Test&#123;</span><br><span class="line">    <span class="function"><span class="keyword">long</span> <span class="title">timeout</span><span class="params">()</span> <span class="keyword">default</span> OL</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></p>
+<p>@interface声明创建了一个真正的java接口。处理注解的工具将接收那些实现了这个注解接口的对象。这类工具可以调用timeout方法来检索某个特定Test注解的timeout元素。<br>注解Target和Retention是元注解。他们注解了Test注解，即将Test注解标识成一个只能运用到方法上的注解，并且当类文件载入到虚拟机的时候，依然可以保留下来。</p>
+<h4 id="注解语法"><a href="#注解语法" class="headerlink" title="注解语法"></a>注解语法</h4><h5 id="注解接口"><a href="#注解接口" class="headerlink" title="注解接口"></a>注解接口</h5><p>注解是由注解接口来定义的<br><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">modifiers <span class="meta">@interface</span> AnnotationName&#123;</span><br><span class="line">    elementDeclaration1;</span><br><span class="line">    elementDeclaration2;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></p>
+<p>每个元素声明都具有下面这种形式：<br><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="function">type <span class="title">elementName</span><span class="params">()</span></span>;</span><br></pre></td></tr></table></figure></p>
+<p>或者<br><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="function">type <span class="title">elementName</span><span class="params">()</span> <span class="keyword">default</span> value</span>;</span><br></pre></td></tr></table></figure></p>
+<p>注解元素的类型为下列之一：</p>
+<ul>
+<li>基本类型（int、short、long、byte、char、double、float或者boolean）</li>
+<li>String</li>
+<li>Class（具有一个可选的类型参数，例如Class&lt;? extends MyClass&gt;）</li>
+<li>enum类型</li>
+<li>注解类型</li>
+<li>由前面所述类型组成的数组（由数组组成的数组不是合法的元素类型）<br>下面是一个合法的元素声明的例子：<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">public</span> <span class="meta">@interface</span> BugReport&#123;</span><br><span class="line">    <span class="keyword">enum</span> Status &#123; UNCONFIRMED, CONFIRMED, FIXED, NOTABUG&#125;;</span><br><span class="line">    <span class="function"><span class="keyword">boolean</span> <span class="title">showStopper</span><span class="params">()</span> <span class="keyword">default</span> <span class="keyword">false</span></span>;</span><br><span class="line">    <span class="function">String <span class="title">assignedTo</span><span class="params">()</span> <span class="keyword">default</span> "[none]"</span>;</span><br><span class="line">    Class&lt;?&gt; testCase() <span class="keyword">default</span> Void.class;</span><br><span class="line">    <span class="function">Status <span class="title">status</span><span class="params">()</span> <span class="keyword">default</span> Status.UNCONFIRMED</span>;</span><br><span class="line">    <span class="function">Reference <span class="title">ref</span><span class="params">()</span> <span class="keyword">default</span> @Reference</span>;<span class="comment">//an annotation type</span></span><br><span class="line">    String[] reprotedBy();</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+</li>
+</ul>
+<h5 id="注解"><a href="#注解" class="headerlink" title="注解"></a>注解</h5><p>每个注解都具有下面这种格式：<br><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">@AnnotationName</span>(elementName1=value1, elementName2=value2, ...)</span><br></pre></td></tr></table></figure></p>
+<p>例如，<br><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">@BugReport</span>(assignedTo=<span class="string">"Harry"</span>, severity=<span class="number">10</span>)</span><br></pre></td></tr></table></figure></p>
+<p>元素的顺序无关紧要。下面这个注解和前面那个一样<br><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">@BugReport</span>(severity=<span class="number">10</span>, assignedTo=<span class="string">"Harry"</span>)</span><br></pre></td></tr></table></figure></p>
+<p>如果某个元素的值并未指定，那么就使用声明的默认值。例如，考虑一下下面这个注解<br><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">@BugReport</span>(severity=<span class="number">10</span>)</span><br></pre></td></tr></table></figure></p>
+<p>元素assignedTo的值是字符串”[none]”<br>有两个特殊的快捷方式可以用来简化注解。<br>如果没有指定元素，要么是因为注解中没有任何元素，要么是因为所有的元素都使用默认值，那么你就不需要用圆括号了。例如，<br><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">@BugReport</span></span><br></pre></td></tr></table></figure></p>
+<p>这样的注解也称为标记注解；<br>另一种快捷方式是单值注解。如果一个元素具有特殊的名字value，并且没有指定其他元素，那么你就可以忽略掉这个元素名以及等号。例如：<br><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">public</span> <span class="meta">@interface</span> ActionListenerFor&#123;</span><br><span class="line">   <span class="function">String <span class="title">value</span><span class="params">()</span></span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></p>
+<p>可以将注解书写成如下格式：<br><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">@ActionListenerFor</span>(<span class="string">"yellow"</span>)</span><br></pre></td></tr></table></figure></p>
+<p>而不是<br><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">@ActionListenerFor</span>(value=<span class="string">"yellow"</span>)</span><br></pre></td></tr></table></figure></p>
+<h5 id="注解各类声明"><a href="#注解各类声明" class="headerlink" title="注解各类声明"></a>注解各类声明</h5><p>注解可以出现在许多地方，这些地方可以分为两类：声明和类型用法。声明注解可以出现在下列声明出：</p>
+<ul>
+<li>包</li>
+<li>类（包括enum）</li>
+<li>接口（包括注解接口）</li>
+<li>方法</li>
+<li>构造器</li>
+<li>实例域（包含enum常量）</li>
+<li>局部变量</li>
+<li>参数变量</li>
+<li>类型参数<h5 id="注解类型用法"><a href="#注解类型用法" class="headerlink" title="注解类型用法"></a>注解类型用法</h5>声明注解提供了正在被声明的项的相关信息。例如，在下面的声明中<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">public</span> User <span class="title">getUser</span><span class="params">(@NonNull String userId)</span></span></span><br></pre></td></tr></table></figure>
+</li>
+</ul>
+<p>就断言userId参数不为空<br>类型用法注解可以出现在下面的位置：</p>
+<ul>
+<li>与泛化类型引元一起使用</li>
+<li>数组中的任何位置</li>
+<li>与超类和实现接口一起使用</li>
+<li><p>与构造器调用一起使用：</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">new</span> <span class="meta">@Localized</span> String(...)</span><br></pre></td></tr></table></figure>
+</li>
+<li><p>与强制转型和instanceof检查一起使用</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">(<span class="meta">@Localized</span> String)text, <span class="keyword">if</span>(text <span class="keyword">instanceof</span> <span class="meta">@Localized</span> String)</span><br></pre></td></tr></table></figure>
+</li>
+<li><p>与异常规约一起使用</p>
+</li>
+<li>与通配符和类型边界一起使用</li>
+<li>与方法和构造器引用一起使用<h5 id="注解this"><a href="#注解this" class="headerlink" title="注解this"></a>注解this</h5>了解一下<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">Point</span></span>&#123;</span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">boolean</span> <span class="title">equals</span><span class="params">(@ReadOnly Point <span class="keyword">this</span>, @ReadOnly Object other)</span></span>&#123;...&#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+</li>
+</ul>
+<p>第一个参数被称为接收器参数，它必须被命名为this，而它的类型就是要构建的类。</p>
+<h4 id="标准注解"><a href="#标准注解" class="headerlink" title="标准注解"></a>标准注解</h4><table>
+<thead>
+<tr>
+<th style="text-align:center">注解接口</th>
+<th style="text-align:center">应用场合</th>
+<th style="text-align:center">目的</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:center">Deprecated</td>
+<td style="text-align:center">全部</td>
+<td style="text-align:center">将项标记为过时</td>
+</tr>
+<tr>
+<td style="text-align:center">SuppressWarnings</td>
+<td style="text-align:center">除了包和注解之外的所有情况</td>
+<td style="text-align:center">阻止某个给定类型的警告信息</td>
+</tr>
+<tr>
+<td style="text-align:center">SafeVarargs</td>
+<td style="text-align:center">方法和构造器</td>
+<td style="text-align:center">断言varargs参数可安全使用</td>
+</tr>
+<tr>
+<td style="text-align:center">Override</td>
+<td style="text-align:center">方法</td>
+<td style="text-align:center">检查该方法是否覆盖了某一个超类方法</td>
+</tr>
+<tr>
+<td style="text-align:center">FunctionalInterface</td>
+<td style="text-align:center">接口</td>
+<td style="text-align:center">将接口标记为只有一个抽象方法的函数式接口</td>
+</tr>
+<tr>
+<td style="text-align:center">PostConstruct</td>
+<td style="text-align:center">方法</td>
+<td style="text-align:center">被标记的方法应该在构造之后立即被调用</td>
+</tr>
+<tr>
+<td style="text-align:center">PreDestroy</td>
+<td style="text-align:center">方法</td>
+<td style="text-align:center">被标记的方法应该在移除之前立即被调用</td>
+</tr>
+<tr>
+<td style="text-align:center">Resource</td>
+<td style="text-align:center">类、接口、方法、域</td>
+<td style="text-align:center">在类或接口上：标记为在其他地方要用到的资源。在方法或域上：为“注入”而标记</td>
+</tr>
+<tr>
+<td style="text-align:center">Resources</td>
+<td style="text-align:center">类、接口</td>
+<td style="text-align:center">一个资源组</td>
+</tr>
+<tr>
+<td style="text-align:center">Generated</td>
+<td style="text-align:center">全部</td>
+<td style="text-align:center"></td>
+</tr>
+<tr>
+<td style="text-align:center">Target</td>
+<td style="text-align:center">注解</td>
+<td style="text-align:center">指明可以应用这个注解的那些项</td>
+</tr>
+<tr>
+<td style="text-align:center">Retention</td>
+<td style="text-align:center">注解</td>
+<td style="text-align:center">指明这个注解可以保留多久</td>
+</tr>
+<tr>
+<td style="text-align:center">Documented</td>
+<td style="text-align:center">注解</td>
+<td style="text-align:center">指明这个注解应该包含在注解项的文档中</td>
+</tr>
+<tr>
+<td style="text-align:center">Inherited</td>
+<td style="text-align:center">注解</td>
+<td style="text-align:center">指明当这个注解应用与一个类的时候，能够自动被它的子类继承</td>
+</tr>
+<tr>
+<td style="text-align:center">Repeatable</td>
+<td style="text-align:center">注解</td>
+<td style="text-align:center">指明这个注解可以在同一个项上应用多次</td>
+</tr>
+</tbody>
+</table>
+<h5 id="用于编译的注解"><a href="#用于编译的注解" class="headerlink" title="用于编译的注解"></a>用于编译的注解</h5><h5 id="用于管理资源的注解"><a href="#用于管理资源的注解" class="headerlink" title="用于管理资源的注解"></a>用于管理资源的注解</h5><h5 id="元注解"><a href="#元注解" class="headerlink" title="元注解"></a>元注解</h5><h4 id="源码级注解处理"><a href="#源码级注解处理" class="headerlink" title="源码级注解处理"></a>源码级注解处理</h4><h5 id="注解处理"><a href="#注解处理" class="headerlink" title="注解处理"></a>注解处理</h5><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">javac -process ProcessorClassName1, ProcessorClassName2, ...sourceFiles</span><br></pre></td></tr></table></figure>
+<h5 id="语言模型API"><a href="#语言模型API" class="headerlink" title="语言模型API"></a>语言模型API</h5><h5 id="使用注解来生成源码"><a href="#使用注解来生成源码" class="headerlink" title="使用注解来生成源码"></a>使用注解来生成源码</h5><h1 id="to-be-continued…"><a href="#to-be-continued…" class="headerlink" title="to be continued…"></a>to be continued…</h1>
+          
+        
+      
+    </div>
+    
+    
+    
+
+    
+
+    
+
+    
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+    
+      
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal" itemscope="" itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
     <link itemprop="mainEntityOfPage" href="https://SilentWatson.github.io/2019/01/09/Java面试题/">
 
     <span hidden itemprop="author" itemscope="" itemtype="http://schema.org/Person">
@@ -1694,7 +1999,7 @@
               
                 <a href="/archives/">
               
-                  <span class="site-state-item-count">19</span>
+                  <span class="site-state-item-count">20</span>
                   <span class="site-state-item-name">posts</span>
                 </a>
               </div>
@@ -1705,7 +2010,7 @@
               
               <div class="site-state-item site-state-categories">
                 <a href="/categories/index.html">
-                  <span class="site-state-item-count">5</span>
+                  <span class="site-state-item-count">6</span>
                   <span class="site-state-item-name">categories</span>
                 </a>
               </div>

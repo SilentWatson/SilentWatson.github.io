@@ -68,7 +68,7 @@
 
 
 
-  <meta name="keywords" content="随笔,">
+  <meta name="keywords" content="Java,">
 
 
 
@@ -79,18 +79,20 @@
 
 
 
-<meta name="description" content="抽象类是类，Java中类单继承；接口不是类，可以多继承，同时一个类也可以实现多个接口 抽象类中可以有非静态成员变量；接口中的变量必须同时是static和final的变量 抽象类有构造器；接口没有构造器 抽象类中有抽象方法和非抽象方法；接口只有抽象方法（JDK1.8接口可以有实现方法）">
-<meta name="keywords" content="随笔">
+<meta name="description" content="Singleton1、熟练掌握单例模式的常见写法。Watson’s Github: designPattern2、总结每种单例写法的优、缺点。3 、思考破坏单例模式的方式有哪些？并且归纳总结。破坏单例模式的方式：反射、序列化和反序列化4 、梳理内部类的执行逻辑，并画出时序图。">
+<meta name="keywords" content="Java">
 <meta property="og:type" content="article">
-<meta property="og:title" content="抽象类和接口的区别">
-<meta property="og:url" content="https://SilentWatson.github.io/2019/02/03/抽象类和接口的区别/index.html">
+<meta property="og:title" content="GPHomeWorkSingleton">
+<meta property="og:url" content="https://SilentWatson.github.io/2019/04/19/GPHomeWorkSingleton/index.html">
 <meta property="og:site_name" content="世界上只有一种英雄主义，就是看清生活的真相之后依然热爱生活。">
-<meta property="og:description" content="抽象类是类，Java中类单继承；接口不是类，可以多继承，同时一个类也可以实现多个接口 抽象类中可以有非静态成员变量；接口中的变量必须同时是static和final的变量 抽象类有构造器；接口没有构造器 抽象类中有抽象方法和非抽象方法；接口只有抽象方法（JDK1.8接口可以有实现方法）">
+<meta property="og:description" content="Singleton1、熟练掌握单例模式的常见写法。Watson’s Github: designPattern2、总结每种单例写法的优、缺点。3 、思考破坏单例模式的方式有哪些？并且归纳总结。破坏单例模式的方式：反射、序列化和反序列化4 、梳理内部类的执行逻辑，并画出时序图。">
 <meta property="og:locale" content="default">
-<meta property="og:updated_time" content="2019-02-03T14:37:23.254Z">
+<meta property="og:image" content="https://silentwatson.github.io/2019/04/19/GPHomeWorkSingleton/">
+<meta property="og:updated_time" content="2019-04-19T14:25:33.681Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="抽象类和接口的区别">
-<meta name="twitter:description" content="抽象类是类，Java中类单继承；接口不是类，可以多继承，同时一个类也可以实现多个接口 抽象类中可以有非静态成员变量；接口中的变量必须同时是static和final的变量 抽象类有构造器；接口没有构造器 抽象类中有抽象方法和非抽象方法；接口只有抽象方法（JDK1.8接口可以有实现方法）">
+<meta name="twitter:title" content="GPHomeWorkSingleton">
+<meta name="twitter:description" content="Singleton1、熟练掌握单例模式的常见写法。Watson’s Github: designPattern2、总结每种单例写法的优、缺点。3 、思考破坏单例模式的方式有哪些？并且归纳总结。破坏单例模式的方式：反射、序列化和反序列化4 、梳理内部类的执行逻辑，并画出时序图。">
+<meta name="twitter:image" content="https://silentwatson.github.io/2019/04/19/GPHomeWorkSingleton/">
 
 
 
@@ -120,13 +122,13 @@
 
 
 
-  <link rel="canonical" href="https://SilentWatson.github.io/2019/02/03/抽象类和接口的区别/">
+  <link rel="canonical" href="https://SilentWatson.github.io/2019/04/19/GPHomeWorkSingleton/">
 
 
 
 
 
-  <title>抽象类和接口的区别 | 世界上只有一种英雄主义，就是看清生活的真相之后依然热爱生活。</title>
+  <title>GPHomeWorkSingleton | 世界上只有一种英雄主义，就是看清生活的真相之后依然热爱生活。</title>
   
 
 
@@ -263,7 +265,7 @@
   
   
   <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="https://SilentWatson.github.io/2019/02/03/抽象类和接口的区别/">
+    <link itemprop="mainEntityOfPage" href="https://SilentWatson.github.io/2019/04/19/GPHomeWorkSingleton/">
 
     <span hidden itemprop="author" itemscope="" itemtype="http://schema.org/Person">
       <meta itemprop="name" content="Silent Watson">
@@ -280,7 +282,7 @@
 
         
         
-          <h1 class="post-title" itemprop="name headline">抽象类和接口的区别</h1>
+          <h1 class="post-title" itemprop="name headline">GPHomeWorkSingleton</h1>
         
 
         <div class="post-meta">
@@ -292,8 +294,8 @@
               
                 <span class="post-meta-item-text">Posted on</span>
               
-              <time title="Post created" itemprop="dateCreated datePublished" datetime="2019-02-03T22:31:53+08:00">
-                2019-02-03
+              <time title="Post created" itemprop="dateCreated datePublished" datetime="2019-04-19T22:05:55+08:00">
+                2019-04-19
               </time>
             
 
@@ -308,8 +310,8 @@
               
                 <span class="post-meta-item-text">Post modified&#58;</span>
               
-              <time title="Post modified" itemprop="dateModified" datetime="2019-02-03T22:37:23+08:00">
-                2019-02-03
+              <time title="Post modified" itemprop="dateModified" datetime="2019-04-19T22:25:33+08:00">
+                2019-04-19
               </time>
             
           </span>
@@ -327,8 +329,8 @@
               
               
                 <span itemprop="about" itemscope="" itemtype="http://schema.org/Thing">
-                  <a href="/categories/Java/" itemprop="url" rel="index">
-                    <span itemprop="name">Java</span>
+                  <a href="/categories/JavaArchitect-GPHomeWork/" itemprop="url" rel="index">
+                    <span itemprop="name">JavaArchitect, GPHomeWork</span>
                   </a>
                 </span>
 
@@ -364,12 +366,7 @@
       
 
       
-        <ul>
-<li>抽象类是类，Java中类单继承；接口不是类，可以多继承，同时一个类也可以实现多个接口</li>
-<li>抽象类中可以有非静态成员变量；接口中的变量必须同时是static和final的变量</li>
-<li>抽象类有构造器；接口没有构造器</li>
-<li>抽象类中有抽象方法和非抽象方法；接口只有抽象方法（JDK1.8接口可以有实现方法）</li>
-</ul>
+        <h1 id="Singleton"><a href="#Singleton" class="headerlink" title="Singleton"></a>Singleton</h1><h2 id="1、熟练掌握单例模式的常见写法。"><a href="#1、熟练掌握单例模式的常见写法。" class="headerlink" title="1、熟练掌握单例模式的常见写法。"></a>1、熟练掌握单例模式的常见写法。</h2><h3 id="Watson’s-Github-designPattern"><a href="#Watson’s-Github-designPattern" class="headerlink" title="Watson’s Github: designPattern"></a><a href="https://github.com/SilentWatson/designpattern" target="_blank" rel="noopener">Watson’s Github: designPattern</a></h3><h2 id="2、总结每种单例写法的优、缺点。"><a href="#2、总结每种单例写法的优、缺点。" class="headerlink" title="2、总结每种单例写法的优、缺点。"></a>2、总结每种单例写法的优、缺点。</h2><h2 id="3-、思考破坏单例模式的方式有哪些？并且归纳总结。"><a href="#3-、思考破坏单例模式的方式有哪些？并且归纳总结。" class="headerlink" title="3 、思考破坏单例模式的方式有哪些？并且归纳总结。"></a>3 、思考破坏单例模式的方式有哪些？并且归纳总结。</h2><h3 id="破坏单例模式的方式：反射、序列化和反序列化"><a href="#破坏单例模式的方式：反射、序列化和反序列化" class="headerlink" title="破坏单例模式的方式：反射、序列化和反序列化"></a>破坏单例模式的方式：反射、序列化和反序列化</h3><h2 id="4-、梳理内部类的执行逻辑，并画出时序图。"><a href="#4-、梳理内部类的执行逻辑，并画出时序图。" class="headerlink" title="4 、梳理内部类的执行逻辑，并画出时序图。"></a>4 、梳理内部类的执行逻辑，并画出时序图。</h2><p><img src="/2019/04/19/GPHomeWorkSingleton/" alt="woops"></p>
 
       
     </div>
@@ -387,7 +384,7 @@
       
         <div class="post-tags">
           
-            <a href="/tags/随笔/" rel="tag"># 随笔</a>
+            <a href="/tags/Java/" rel="tag"># Java</a>
           
         </div>
       
@@ -400,8 +397,8 @@
         <div class="post-nav">
           <div class="post-nav-next post-nav-item">
             
-              <a href="/2019/02/03/RMI/" rel="next" title="RMI">
-                <i class="fa fa-chevron-left"></i> RMI
+              <a href="/2019/02/21/designPatternSimpleFactory/" rel="next" title="designPatternSimpleFacotry">
+                <i class="fa fa-chevron-left"></i> designPatternSimpleFacotry
               </a>
             
           </div>
@@ -409,10 +406,6 @@
           <span class="post-nav-divider"></span>
 
           <div class="post-nav-prev post-nav-item">
-            
-              <a href="/2019/02/05/Design-Pattern-Strategy/" rel="prev" title="Design-Pattern-Strategy">
-                Design-Pattern-Strategy <i class="fa fa-chevron-right"></i>
-              </a>
             
           </div>
         </div>
@@ -464,8 +457,17 @@
       
 
       
+        <ul class="sidebar-nav motion-element">
+          <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap">
+            Table of Contents
+          </li>
+          <li class="sidebar-nav-overview" data-target="site-overview-wrap">
+            Overview
+          </li>
+        </ul>
+      
 
-      <section class="site-overview-wrap sidebar-panel sidebar-panel-active">
+      <section class="site-overview-wrap sidebar-panel">
         <div class="site-overview">
           <div class="site-author motion-element" itemprop="author" itemscope="" itemtype="http://schema.org/Person">
             
@@ -541,6 +543,22 @@
         </div>
       </section>
 
+      
+      <!--noindex-->
+        <section class="post-toc-wrap motion-element sidebar-panel sidebar-panel-active">
+          <div class="post-toc">
+
+            
+              
+            
+
+            
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#Singleton"><span class="nav-number">1.</span> <span class="nav-text">Singleton</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#1、熟练掌握单例模式的常见写法。"><span class="nav-number">1.1.</span> <span class="nav-text">1、熟练掌握单例模式的常见写法。</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#Watson’s-Github-designPattern"><span class="nav-number">1.1.1.</span> <span class="nav-text">Watson’s Github: designPattern</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#2、总结每种单例写法的优、缺点。"><span class="nav-number">1.2.</span> <span class="nav-text">2、总结每种单例写法的优、缺点。</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#3-、思考破坏单例模式的方式有哪些？并且归纳总结。"><span class="nav-number">1.3.</span> <span class="nav-text">3 、思考破坏单例模式的方式有哪些？并且归纳总结。</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#破坏单例模式的方式：反射、序列化和反序列化"><span class="nav-number">1.3.1.</span> <span class="nav-text">破坏单例模式的方式：反射、序列化和反序列化</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#4-、梳理内部类的执行逻辑，并画出时序图。"><span class="nav-number">1.4.</span> <span class="nav-text">4 、梳理内部类的执行逻辑，并画出时序图。</span></a></li></ol></li></ol></div>
+            
+
+          </div>
+        </section>
+      <!--/noindex-->
       
 
       
