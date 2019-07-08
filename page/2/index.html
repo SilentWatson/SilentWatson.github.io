@@ -259,6 +259,170 @@
   
   
   <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="https://SilentWatson.github.io/2019/01/22/Java多线程编程核心技术/">
+
+    <span hidden itemprop="author" itemscope="" itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="Silent Watson">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="/images/avatar.gif">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope="" itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="世界上只有一种英雄主义，就是看清生活的真相之后依然热爱生活。">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+                
+                <a class="post-title-link" href="/2019/01/22/Java多线程编程核心技术/" itemprop="url">Java多线程编程核心技术</a></h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">Posted on</span>
+              
+              <time title="Post created" itemprop="dateCreated datePublished" datetime="2019-01-22T15:37:11+08:00">
+                2019-01-22
+              </time>
+            
+
+            
+              <span class="post-meta-divider">|</span>
+            
+
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-check-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">Post modified&#58;</span>
+              
+              <time title="Post modified" itemprop="dateModified" datetime="2019-02-05T10:17:24+08:00">
+                2019-02-05
+              </time>
+            
+          </span>
+
+          
+            <span class="post-category">
+            
+              <span class="post-meta-divider">|</span>
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">In</span>
+              
+              
+                <span itemprop="about" itemscope="" itemtype="http://schema.org/Thing">
+                  <a href="/categories/concurrent/" itemprop="url" rel="index">
+                    <span itemprop="name">concurrent</span>
+                  </a>
+                </span>
+
+                
+                
+              
+            </span>
+          
+
+          
+            
+          
+
+          
+          
+
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        
+          
+            <h1 id="Java多线程技能"><a href="#Java多线程技能" class="headerlink" title="Java多线程技能"></a>Java多线程技能</h1><h2 id="进程和多线程的概念和线程的优点"><a href="#进程和多线程的概念和线程的优点" class="headerlink" title="进程和多线程的概念和线程的优点"></a>进程和多线程的概念和线程的优点</h2><blockquote>
+<p><b>进程</b><br>是操作系统, 是一次程序的执行； 是一个程序及其数据在处理机上依此执行时所发生的活动；是程序在一个数据集合上运行的过程，他是系统进行资源分配和调度的一个独立单位。</p>
+</blockquote>
+<blockquote>
+<p><b>线程</b><br>是进程中独立运行的子任务。</p>
+</blockquote>
+<p>线程的优点：增加cpu利用率</p>
+<h2 id="使用多线程"><a href="#使用多线程" class="headerlink" title="使用多线程"></a>使用多线程</h2><h3 id="使用Thread类"><a href="#使用Thread类" class="headerlink" title="使用Thread类"></a>使用Thread类</h3><h3 id="使用Runnable接口"><a href="#使用Runnable接口" class="headerlink" title="使用Runnable接口"></a>使用Runnable接口</h3><h3 id="实例变量与共享安全"><a href="#实例变量与共享安全" class="headerlink" title="实例变量与共享安全"></a>实例变量与共享安全</h3><h3 id="留意i-与System-out-println-的异常"><a href="#留意i-与System-out-println-的异常" class="headerlink" title="留意i--与System.out.println()的异常"></a>留意<code>i--</code>与<code>System.out.println()</code>的异常</h3><h3 id="concurrentThread-方法"><a href="#concurrentThread-方法" class="headerlink" title="concurrentThread()方法"></a><code>concurrentThread()</code>方法</h3><h3 id="isAlive-方法"><a href="#isAlive-方法" class="headerlink" title="isAlive()方法"></a><code>isAlive()</code>方法</h3><h3 id="sleep-方法"><a href="#sleep-方法" class="headerlink" title="sleep()方法"></a><code>sleep()</code>方法</h3><h3 id="getId-方法"><a href="#getId-方法" class="headerlink" title="getId()方法"></a><code>getId()</code>方法</h3><h1 id="对象及变量的并发访问"><a href="#对象及变量的并发访问" class="headerlink" title="对象及变量的并发访问"></a>对象及变量的并发访问</h1><h1 id="线程间通信"><a href="#线程间通信" class="headerlink" title="线程间通信"></a>线程间通信</h1><blockquote>
+<p>线程之间通过合适的方法通信，从单纯的抢夺关系，变成协作更强的团队作战</p>
+<p>By Watson</p>
+</blockquote>
+<h2 id="使用wait-notify实现线程间通信"><a href="#使用wait-notify实现线程间通信" class="headerlink" title="使用wait/notify实现线程间通信"></a>使用wait/notify实现线程间通信</h2><h2 id="通过管道进行线程通信"><a href="#通过管道进行线程通信" class="headerlink" title="通过管道进行线程通信"></a>通过管道进行线程通信</h2><h2 id="方法join的使用"><a href="#方法join的使用" class="headerlink" title="方法join的使用"></a>方法join的使用</h2><h2 id="ThreadLocal类的使用"><a href="#ThreadLocal类的使用" class="headerlink" title="ThreadLocal类的使用"></a>ThreadLocal类的使用</h2><h1 id="Lock的使用"><a href="#Lock的使用" class="headerlink" title="Lock的使用"></a>Lock的使用</h1><h1 id="定时器Timer"><a href="#定时器Timer" class="headerlink" title="定时器Timer"></a>定时器Timer</h1><h1 id="单例模式与多线程"><a href="#单例模式与多线程" class="headerlink" title="单例模式与多线程"></a>单例模式与多线程</h1><h1 id="to-be-continued…"><a href="#to-be-continued…" class="headerlink" title="to be continued…"></a>to be continued…</h1>
+          
+        
+      
+    </div>
+    
+    
+    
+
+    
+
+    
+
+    
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+    
+      
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal" itemscope="" itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
     <link itemprop="mainEntityOfPage" href="https://SilentWatson.github.io/2019/01/10/自定义注解的场景及实现/">
 
     <span hidden itemprop="author" itemscope="" itemtype="http://schema.org/Person">
@@ -1817,143 +1981,11 @@
 
 
     
-      
-
-  
-
-  
-  
-  
-
-  <article class="post post-type-normal" itemscope="" itemtype="http://schema.org/Article">
-  
-  
-  
-  <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="https://SilentWatson.github.io/2018/12/18/hexo-git-GitHub部署你的blog/">
-
-    <span hidden itemprop="author" itemscope="" itemtype="http://schema.org/Person">
-      <meta itemprop="name" content="Silent Watson">
-      <meta itemprop="description" content="">
-      <meta itemprop="image" content="/images/avatar.gif">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope="" itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="世界上只有一种英雄主义，就是看清生活的真相之后依然热爱生活。">
-    </span>
-
-    
-      <header class="post-header">
-
-        
-        
-          <h1 class="post-title" itemprop="name headline">
-                
-                <a class="post-title-link" href="/2018/12/18/hexo-git-GitHub部署你的blog/" itemprop="url">Git+hexo+GitHub部署你的个人博客</a></h1>
-        
-
-        <div class="post-meta">
-          <span class="post-time">
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-calendar-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">Posted on</span>
-              
-              <time title="Post created" itemprop="dateCreated datePublished" datetime="2018-12-18T09:10:26+08:00">
-                2018-12-18
-              </time>
-            
-
-            
-              <span class="post-meta-divider">|</span>
-            
-
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-calendar-check-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">Post modified&#58;</span>
-              
-              <time title="Post modified" itemprop="dateModified" datetime="2018-12-22T19:08:56+08:00">
-                2018-12-22
-              </time>
-            
-          </span>
-
-          
-
-          
-            
-          
-
-          
-          
-
-          
-
-          
-
-          
-
-        </div>
-      </header>
-    
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-
-      
-      
-
-      
-        
-          
-            <p>GitHub是世界顶级的程序员交流平台，如何在GitHub上部署你的个人博客呢？</p>
-<h2 id="下载安装Git"><a href="#下载安装Git" class="headerlink" title="下载安装Git"></a>下载安装Git</h2><h2 id="下载安装nodejs"><a href="#下载安装nodejs" class="headerlink" title="下载安装nodejs"></a>下载安装nodejs</h2><h2 id="创建一个GitHub账号"><a href="#创建一个GitHub账号" class="headerlink" title="创建一个GitHub账号"></a>创建一个GitHub账号</h2><h2 id="MissionComplete"><a href="#MissionComplete" class="headerlink" title="MissionComplete"></a>MissionComplete</h2>
-          
-        
-      
-    </div>
-    
-    
-    
-
-    
-
-    
-
-    
-
-    <footer class="post-footer">
-      
-
-      
-
-      
-
-      
-      
-        <div class="post-eof"></div>
-      
-    </footer>
-  </div>
-  
-  
-  
-  </article>
-
-
-    
   </section>
 
   
   <nav class="pagination">
-    <a class="extend prev" rel="prev" href="/"><i class="fa fa-angle-left"></i></a><a class="page-number" href="/">1</a><span class="page-number current">2</span>
+    <a class="extend prev" rel="prev" href="/"><i class="fa fa-angle-left"></i></a><a class="page-number" href="/">1</a><span class="page-number current">2</span><a class="page-number" href="/page/3/">3</a><a class="extend next" rel="next" href="/page/3/"><i class="fa fa-angle-right"></i></a>
   </nav>
 
 
@@ -1999,7 +2031,7 @@
               
                 <a href="/archives/">
               
-                  <span class="site-state-item-count">20</span>
+                  <span class="site-state-item-count">21</span>
                   <span class="site-state-item-name">posts</span>
                 </a>
               </div>
@@ -2010,7 +2042,7 @@
               
               <div class="site-state-item site-state-categories">
                 <a href="/categories/index.html">
-                  <span class="site-state-item-count">6</span>
+                  <span class="site-state-item-count">7</span>
                   <span class="site-state-item-name">categories</span>
                 </a>
               </div>
@@ -2021,7 +2053,7 @@
               
               <div class="site-state-item site-state-tags">
                 <a href="/tags/index.html">
-                  <span class="site-state-item-count">13</span>
+                  <span class="site-state-item-count">14</span>
                   <span class="site-state-item-name">tags</span>
                 </a>
               </div>
