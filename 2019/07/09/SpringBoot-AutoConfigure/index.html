@@ -68,7 +68,7 @@
 
 
 
-  <meta name="keywords" content="Hexo, NexT">
+  <meta name="keywords" content="SpringBoot,AutoConfigure,">
 
 
 
@@ -79,14 +79,18 @@
 
 
 
+<meta name="description" content="从@SpringBootApplication开始这是一个复合注解123456789101112131415161718@Target(&amp;#123;ElementType.TYPE&amp;#125;)@Retention(RetentionPolicy.RUNTIME)@Documented@Inherited@SpringBootConfiguration@EnableAutoConfiguratio">
+<meta name="keywords" content="SpringBoot,AutoConfigure">
 <meta property="og:type" content="article">
-<meta property="og:title" content="SpringBoot AutoConfigure">
+<meta property="og:title" content="SpringBoot 自动装配原理详解">
 <meta property="og:url" content="https://SilentWatson.github.io/2019/07/09/SpringBoot-AutoConfigure/index.html">
 <meta property="og:site_name" content="技术沉思录">
+<meta property="og:description" content="从@SpringBootApplication开始这是一个复合注解123456789101112131415161718@Target(&amp;#123;ElementType.TYPE&amp;#125;)@Retention(RetentionPolicy.RUNTIME)@Documented@Inherited@SpringBootConfiguration@EnableAutoConfiguratio">
 <meta property="og:locale" content="default">
-<meta property="og:updated_time" content="2019-07-09T00:16:18.664Z">
+<meta property="og:updated_time" content="2019-07-09T14:30:29.707Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="SpringBoot AutoConfigure">
+<meta name="twitter:title" content="SpringBoot 自动装配原理详解">
+<meta name="twitter:description" content="从@SpringBootApplication开始这是一个复合注解123456789101112131415161718@Target(&amp;#123;ElementType.TYPE&amp;#125;)@Retention(RetentionPolicy.RUNTIME)@Documented@Inherited@SpringBootConfiguration@EnableAutoConfiguratio">
 
 
 
@@ -122,7 +126,7 @@
 
 
 
-  <title>SpringBoot AutoConfigure | 技术沉思录</title>
+  <title>SpringBoot 自动装配原理详解 | 技术沉思录</title>
   
 
 
@@ -276,7 +280,7 @@
 
         
         
-          <h1 class="post-title" itemprop="name headline">SpringBoot AutoConfigure</h1>
+          <h1 class="post-title" itemprop="name headline">SpringBoot 自动装配原理详解</h1>
         
 
         <div class="post-meta">
@@ -304,7 +308,7 @@
               
                 <span class="post-meta-item-text">Post modified&#58;</span>
               
-              <time title="Post modified" itemprop="dateModified" datetime="2019-07-09T08:16:18+08:00">
+              <time title="Post modified" itemprop="dateModified" datetime="2019-07-09T22:30:29+08:00">
                 2019-07-09
               </time>
             
@@ -323,8 +327,8 @@
               
               
                 <span itemprop="about" itemscope="" itemtype="http://schema.org/Thing">
-                  <a href="/categories/Spring-SpringBoot/" itemprop="url" rel="index">
-                    <span itemprop="name">Spring,SpringBoot</span>
+                  <a href="/categories/Spring/" itemprop="url" rel="index">
+                    <span itemprop="name">Spring</span>
                   </a>
                 </span>
 
@@ -360,7 +364,10 @@
       
 
       
-        
+        <h2 id="从-SpringBootApplication开始"><a href="#从-SpringBootApplication开始" class="headerlink" title="从@SpringBootApplication开始"></a>从@SpringBootApplication开始</h2><p>这是一个复合注解<br><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">@Target</span>(&#123;ElementType.TYPE&#125;)</span><br><span class="line"><span class="meta">@Retention</span>(RetentionPolicy.RUNTIME)</span><br><span class="line"><span class="meta">@Documented</span></span><br><span class="line"><span class="meta">@Inherited</span></span><br><span class="line"><span class="meta">@SpringBootConfiguration</span></span><br><span class="line"><span class="meta">@EnableAutoConfiguration</span></span><br><span class="line"><span class="meta">@ComponentScan</span>(</span><br><span class="line">  excludeFilters = &#123;<span class="meta">@Filter</span>(</span><br><span class="line">  type = FilterType.CUSTOM,</span><br><span class="line">  classes = &#123;TypeExcludeFilter.class&#125;</span><br><span class="line">), <span class="meta">@Filter</span>(</span><br><span class="line">  type = FilterType.CUSTOM,</span><br><span class="line">  classes = &#123;AutoConfigurationExcludeFilter.class&#125;</span><br><span class="line">)&#125;</span><br><span class="line">)</span><br><span class="line"><span class="keyword">public</span> <span class="meta">@interface</span> SpringBootApplication &#123;</span><br><span class="line">  ...</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></p>
+<h3 id="SpringBootConfiguration"><a href="#SpringBootConfiguration" class="headerlink" title="@SpringBootConfiguration"></a>@SpringBootConfiguration</h3><p>这也是一个复合注解<br><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">@Target</span>(&#123;ElementType.TYPE&#125;)</span><br><span class="line"><span class="meta">@Retention</span>(RetentionPolicy.RUNTIME)</span><br><span class="line"><span class="meta">@Documented</span></span><br><span class="line"><span class="meta">@Configuration</span></span><br><span class="line"><span class="keyword">public</span> <span class="meta">@interface</span> SpringBootConfiguration &#123;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></p>
+<p>实质就是@Configuration 一般用于快速配置ioc容器</p>
+
       
     </div>
     
@@ -375,6 +382,14 @@
 
     <footer class="post-footer">
       
+        <div class="post-tags">
+          
+            <a href="/tags/SpringBoot/" rel="tag"># SpringBoot</a>
+          
+            <a href="/tags/AutoConfigure/" rel="tag"># AutoConfigure</a>
+          
+        </div>
+      
 
       
       
@@ -384,8 +399,8 @@
         <div class="post-nav">
           <div class="post-nav-next post-nav-item">
             
-              <a href="/2019/07/09/Stream/" rel="next" title="Stream">
-                <i class="fa fa-chevron-left"></i> Stream
+              <a href="/2019/07/09/Stream/" rel="next" title="Java8 stream 流的基本操作">
+                <i class="fa fa-chevron-left"></i> Java8 stream 流的基本操作
               </a>
             
           </div>
@@ -444,8 +459,17 @@
       
 
       
+        <ul class="sidebar-nav motion-element">
+          <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap">
+            Table of Contents
+          </li>
+          <li class="sidebar-nav-overview" data-target="site-overview-wrap">
+            Overview
+          </li>
+        </ul>
+      
 
-      <section class="site-overview-wrap sidebar-panel sidebar-panel-active">
+      <section class="site-overview-wrap sidebar-panel">
         <div class="site-overview">
           <div class="site-author motion-element" itemprop="author" itemscope="" itemtype="http://schema.org/Person">
             
@@ -482,7 +506,7 @@
               
               <div class="site-state-item site-state-tags">
                 <a href="/tags/index.html">
-                  <span class="site-state-item-count">14</span>
+                  <span class="site-state-item-count">17</span>
                   <span class="site-state-item-name">tags</span>
                 </a>
               </div>
@@ -521,6 +545,22 @@
         </div>
       </section>
 
+      
+      <!--noindex-->
+        <section class="post-toc-wrap motion-element sidebar-panel sidebar-panel-active">
+          <div class="post-toc">
+
+            
+              
+            
+
+            
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#从-SpringBootApplication开始"><span class="nav-number">1.</span> <span class="nav-text">从@SpringBootApplication开始</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#SpringBootConfiguration"><span class="nav-number">1.1.</span> <span class="nav-text">@SpringBootConfiguration</span></a></li></ol></li></ol></div>
+            
+
+          </div>
+        </section>
+      <!--/noindex-->
       
 
       

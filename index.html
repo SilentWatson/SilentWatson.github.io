@@ -278,7 +278,7 @@
         
           <h1 class="post-title" itemprop="name headline">
                 
-                <a class="post-title-link" href="/2019/07/09/SpringBoot-AutoConfigure/" itemprop="url">SpringBoot AutoConfigure</a></h1>
+                <a class="post-title-link" href="/2019/07/09/SpringBoot-AutoConfigure/" itemprop="url">SpringBoot 自动装配原理详解</a></h1>
         
 
         <div class="post-meta">
@@ -306,7 +306,7 @@
               
                 <span class="post-meta-item-text">Post modified&#58;</span>
               
-              <time title="Post modified" itemprop="dateModified" datetime="2019-07-09T08:16:18+08:00">
+              <time title="Post modified" itemprop="dateModified" datetime="2019-07-09T22:30:29+08:00">
                 2019-07-09
               </time>
             
@@ -325,8 +325,8 @@
               
               
                 <span itemprop="about" itemscope="" itemtype="http://schema.org/Thing">
-                  <a href="/categories/Spring-SpringBoot/" itemprop="url" rel="index">
-                    <span itemprop="name">Spring,SpringBoot</span>
+                  <a href="/categories/Spring/" itemprop="url" rel="index">
+                    <span itemprop="name">Spring</span>
                   </a>
                 </span>
 
@@ -364,7 +364,10 @@
       
         
           
-            
+            <h2 id="从-SpringBootApplication开始"><a href="#从-SpringBootApplication开始" class="headerlink" title="从@SpringBootApplication开始"></a>从@SpringBootApplication开始</h2><p>这是一个复合注解<br><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">@Target</span>(&#123;ElementType.TYPE&#125;)</span><br><span class="line"><span class="meta">@Retention</span>(RetentionPolicy.RUNTIME)</span><br><span class="line"><span class="meta">@Documented</span></span><br><span class="line"><span class="meta">@Inherited</span></span><br><span class="line"><span class="meta">@SpringBootConfiguration</span></span><br><span class="line"><span class="meta">@EnableAutoConfiguration</span></span><br><span class="line"><span class="meta">@ComponentScan</span>(</span><br><span class="line">  excludeFilters = &#123;<span class="meta">@Filter</span>(</span><br><span class="line">  type = FilterType.CUSTOM,</span><br><span class="line">  classes = &#123;TypeExcludeFilter.class&#125;</span><br><span class="line">), <span class="meta">@Filter</span>(</span><br><span class="line">  type = FilterType.CUSTOM,</span><br><span class="line">  classes = &#123;AutoConfigurationExcludeFilter.class&#125;</span><br><span class="line">)&#125;</span><br><span class="line">)</span><br><span class="line"><span class="keyword">public</span> <span class="meta">@interface</span> SpringBootApplication &#123;</span><br><span class="line">  ...</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></p>
+<h3 id="SpringBootConfiguration"><a href="#SpringBootConfiguration" class="headerlink" title="@SpringBootConfiguration"></a>@SpringBootConfiguration</h3><p>这也是一个复合注解<br><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">@Target</span>(&#123;ElementType.TYPE&#125;)</span><br><span class="line"><span class="meta">@Retention</span>(RetentionPolicy.RUNTIME)</span><br><span class="line"><span class="meta">@Documented</span></span><br><span class="line"><span class="meta">@Configuration</span></span><br><span class="line"><span class="keyword">public</span> <span class="meta">@interface</span> SpringBootConfiguration &#123;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></p>
+<p>实质就是@Configuration 一般用于快速配置ioc容器</p>
+
           
         
       
@@ -431,7 +434,7 @@
         
           <h1 class="post-title" itemprop="name headline">
                 
-                <a class="post-title-link" href="/2019/07/09/Stream/" itemprop="url">Stream</a></h1>
+                <a class="post-title-link" href="/2019/07/09/Stream/" itemprop="url">Java8 stream 流的基本操作</a></h1>
         
 
         <div class="post-meta">
@@ -459,7 +462,7 @@
               
                 <span class="post-meta-item-text">Post modified&#58;</span>
               
-              <time title="Post modified" itemprop="dateModified" datetime="2019-07-09T08:45:10+08:00">
+              <time title="Post modified" itemprop="dateModified" datetime="2019-07-09T08:48:50+08:00">
                 2019-07-09
               </time>
             
@@ -517,7 +520,7 @@
       
         
           
-            <h2 id="java8-stream-流的基本操作"><a href="#java8-stream-流的基本操作" class="headerlink" title="java8 stream 流的基本操作"></a>java8 stream 流的基本操作</h2><h3 id="演示类-The-demo-class"><a href="#演示类-The-demo-class" class="headerlink" title="演示类(The demo class)"></a>演示类(The demo class)</h3><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">Person</span></span>&#123;</span><br><span class="line">  <span class="keyword">private</span> <span class="keyword">final</span> String name;</span><br><span class="line">  <span class="keyword">private</span> <span class="keyword">final</span> <span class="keyword">boolean</span> gender;</span><br><span class="line"></span><br><span class="line">  <span class="function"><span class="keyword">public</span> <span class="title">Person</span><span class="params">(String name,<span class="keyword">boolean</span> gender)</span></span>&#123;</span><br><span class="line">    <span class="keyword">this</span>.name = name;</span><br><span class="line">    <span class="keyword">this</span>.gender = gender;</span><br><span class="line">  &#125;</span><br><span class="line">  <span class="comment">//getters and setters</span></span><br><span class="line">  <span class="comment">//...</span></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+            <h3 id="演示类-The-demo-class"><a href="#演示类-The-demo-class" class="headerlink" title="演示类(The demo class)"></a>演示类(The demo class)</h3><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">Person</span></span>&#123;</span><br><span class="line">  <span class="keyword">private</span> <span class="keyword">final</span> String name;</span><br><span class="line">  <span class="keyword">private</span> <span class="keyword">final</span> <span class="keyword">boolean</span> gender;</span><br><span class="line"></span><br><span class="line">  <span class="function"><span class="keyword">public</span> <span class="title">Person</span><span class="params">(String name,<span class="keyword">boolean</span> gender)</span></span>&#123;</span><br><span class="line">    <span class="keyword">this</span>.name = name;</span><br><span class="line">    <span class="keyword">this</span>.gender = gender;</span><br><span class="line">  &#125;</span><br><span class="line">  <span class="comment">//getters and setters</span></span><br><span class="line">  <span class="comment">//...</span></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
 <p>需求：在一个List<person> persons 中找出所有的女性，并打印其姓名<br><br>在Java8以前，我们通常是用foreach遍历实现这样的需求<br><br>但在Java8中，我们可以这样写<br><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">persons.stream()</span><br><span class="line">  .filter(Person:getGender)</span><br><span class="line">  .map(Person:getName)</span><br><span class="line">  .forEach(a-&gt;System.out.println(a));</span><br></pre></td></tr></table></figure></person></p>
 
           
@@ -1847,7 +1850,7 @@
               
               <div class="site-state-item site-state-tags">
                 <a href="/tags/index.html">
-                  <span class="site-state-item-count">14</span>
+                  <span class="site-state-item-count">17</span>
                   <span class="site-state-item-name">tags</span>
                 </a>
               </div>
