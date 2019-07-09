@@ -80,12 +80,12 @@
 
 
 <meta property="og:type" content="website">
-<meta property="og:title" content="世界上只有一种英雄主义，就是看清生活的真相之后依然热爱生活。">
+<meta property="og:title" content="技术沉思录">
 <meta property="og:url" content="https://SilentWatson.github.io/page/2/index.html">
-<meta property="og:site_name" content="世界上只有一种英雄主义，就是看清生活的真相之后依然热爱生活。">
+<meta property="og:site_name" content="技术沉思录">
 <meta property="og:locale" content="default">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="世界上只有一种英雄主义，就是看清生活的真相之后依然热爱生活。">
+<meta name="twitter:title" content="技术沉思录">
 
 
 
@@ -121,7 +121,7 @@
 
 
 
-  <title>世界上只有一种英雄主义，就是看清生活的真相之后依然热爱生活。</title>
+  <title>技术沉思录</title>
   
 
 
@@ -152,7 +152,7 @@
     <div class="custom-logo-site-title">
       <a href="/" class="brand" rel="start">
         <span class="logo-line-before"><i></i></span>
-        <span class="site-title">世界上只有一种英雄主义，就是看清生活的真相之后依然热爱生活。</span>
+        <span class="site-title">技术沉思录</span>
         <span class="logo-line-after"><i></i></span>
       </a>
     </div>
@@ -259,6 +259,165 @@
   
   
   <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="https://SilentWatson.github.io/2019/01/28/脚本、编译与注解处理/">
+
+    <span hidden itemprop="author" itemscope="" itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="Silent Watson">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="/images/avatar.gif">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope="" itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="技术沉思录">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+                
+                <a class="post-title-link" href="/2019/01/28/脚本、编译与注解处理/" itemprop="url">脚本、编译与注解处理</a></h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">Posted on</span>
+              
+              <time title="Post created" itemprop="dateCreated datePublished" datetime="2019-01-28T22:42:09+08:00">
+                2019-01-28
+              </time>
+            
+
+            
+              <span class="post-meta-divider">|</span>
+            
+
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-check-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">Post modified&#58;</span>
+              
+              <time title="Post modified" itemprop="dateModified" datetime="2019-01-29T07:10:27+08:00">
+                2019-01-29
+              </time>
+            
+          </span>
+
+          
+            <span class="post-category">
+            
+              <span class="post-meta-divider">|</span>
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">In</span>
+              
+              
+                <span itemprop="about" itemscope="" itemtype="http://schema.org/Thing">
+                  <a href="/categories/Programming-Language/" itemprop="url" rel="index">
+                    <span itemprop="name">Programming Language</span>
+                  </a>
+                </span>
+
+                
+                
+              
+            </span>
+          
+
+          
+            
+          
+
+          
+          
+
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        
+          
+            <h1 id="Java-平台的脚本"><a href="#Java-平台的脚本" class="headerlink" title="Java 平台的脚本"></a>Java 平台的脚本</h1><p>脚本语言是一种通过在运行时解释程序文本，从而避免使用通常的编辑/编译/链接/运行循环的语言。脚本语言有许多优势：</p>
+<ul>
+<li>便于快速便跟，鼓励不断试验</li>
+<li>可以修改运行着的程序的行为</li>
+<li>支持程序用户的定制化<h2 id="获取脚本引擎"><a href="#获取脚本引擎" class="headerlink" title="获取脚本引擎"></a>获取脚本引擎</h2><h2 id="脚本赋值与绑定"><a href="#脚本赋值与绑定" class="headerlink" title="脚本赋值与绑定"></a>脚本赋值与绑定</h2><h2 id="重定向输入与输出"><a href="#重定向输入与输出" class="headerlink" title="重定向输入与输出"></a>重定向输入与输出</h2><h2 id="调用脚本的函数和方法"><a href="#调用脚本的函数和方法" class="headerlink" title="调用脚本的函数和方法"></a>调用脚本的函数和方法</h2><h2 id="编译脚本"><a href="#编译脚本" class="headerlink" title="编译脚本"></a>编译脚本</h2><h1 id="编译API"><a href="#编译API" class="headerlink" title="编译API"></a>编译API</h1><h2 id="编译便捷之法"><a href="#编译便捷之法" class="headerlink" title="编译便捷之法"></a>编译便捷之法</h2><h2 id="使用编译工具"><a href="#使用编译工具" class="headerlink" title="使用编译工具"></a>使用编译工具</h2><h1 id="使用注解"><a href="#使用注解" class="headerlink" title="使用注解"></a>使用注解</h1><h1 id="to-be-continued…"><a href="#to-be-continued…" class="headerlink" title="to be continued…"></a>to be continued…</h1></li>
+</ul>
+
+          
+        
+      
+    </div>
+    
+    
+    
+
+    
+
+    
+
+    
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+    
+      
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal" itemscope="" itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
     <link itemprop="mainEntityOfPage" href="https://SilentWatson.github.io/2019/01/22/Java多线程编程核心技术/">
 
     <span hidden itemprop="author" itemscope="" itemtype="http://schema.org/Person">
@@ -268,7 +427,7 @@
     </span>
 
     <span hidden itemprop="publisher" itemscope="" itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="世界上只有一种英雄主义，就是看清生活的真相之后依然热爱生活。">
+      <meta itemprop="name" content="技术沉思录">
     </span>
 
     
@@ -432,7 +591,7 @@
     </span>
 
     <span hidden itemprop="publisher" itemscope="" itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="世界上只有一种英雄主义，就是看清生活的真相之后依然热爱生活。">
+      <meta itemprop="name" content="技术沉思录">
     </span>
 
     
@@ -737,7 +896,7 @@
     </span>
 
     <span hidden itemprop="publisher" itemscope="" itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="世界上只有一种英雄主义，就是看清生活的真相之后依然热爱生活。">
+      <meta itemprop="name" content="技术沉思录">
     </span>
 
     
@@ -966,7 +1125,7 @@
     </span>
 
     <span hidden itemprop="publisher" itemscope="" itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="世界上只有一种英雄主义，就是看清生活的真相之后依然热爱生活。">
+      <meta itemprop="name" content="技术沉思录">
     </span>
 
     
@@ -1207,7 +1366,7 @@
     </span>
 
     <span hidden itemprop="publisher" itemscope="" itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="世界上只有一种英雄主义，就是看清生活的真相之后依然热爱生活。">
+      <meta itemprop="name" content="技术沉思录">
     </span>
 
     
@@ -1338,7 +1497,7 @@
     </span>
 
     <span hidden itemprop="publisher" itemscope="" itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="世界上只有一种英雄主义，就是看清生活的真相之后依然热爱生活。">
+      <meta itemprop="name" content="技术沉思录">
     </span>
 
     
@@ -1472,7 +1631,7 @@
     </span>
 
     <span hidden itemprop="publisher" itemscope="" itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="世界上只有一种英雄主义，就是看清生活的真相之后依然热爱生活。">
+      <meta itemprop="name" content="技术沉思录">
     </span>
 
     
@@ -1604,7 +1763,7 @@
     </span>
 
     <span hidden itemprop="publisher" itemscope="" itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="世界上只有一种英雄主义，就是看清生活的真相之后依然热爱生活。">
+      <meta itemprop="name" content="技术沉思录">
     </span>
 
     
@@ -1735,7 +1894,7 @@
     </span>
 
     <span hidden itemprop="publisher" itemscope="" itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="世界上只有一种英雄主义，就是看清生活的真相之后依然热爱生活。">
+      <meta itemprop="name" content="技术沉思录">
     </span>
 
     
@@ -1849,138 +2008,6 @@
 
 
     
-      
-
-  
-
-  
-  
-  
-
-  <article class="post post-type-normal" itemscope="" itemtype="http://schema.org/Article">
-  
-  
-  
-  <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="https://SilentWatson.github.io/2018/12/22/Atom使用vim/">
-
-    <span hidden itemprop="author" itemscope="" itemtype="http://schema.org/Person">
-      <meta itemprop="name" content="Silent Watson">
-      <meta itemprop="description" content="">
-      <meta itemprop="image" content="/images/avatar.gif">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope="" itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="世界上只有一种英雄主义，就是看清生活的真相之后依然热爱生活。">
-    </span>
-
-    
-      <header class="post-header">
-
-        
-        
-          <h1 class="post-title" itemprop="name headline">
-                
-                <a class="post-title-link" href="/2018/12/22/Atom使用vim/" itemprop="url">Atom使用vim</a></h1>
-        
-
-        <div class="post-meta">
-          <span class="post-time">
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-calendar-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">Posted on</span>
-              
-              <time title="Post created" itemprop="dateCreated datePublished" datetime="2018-12-22T19:15:58+08:00">
-                2018-12-22
-              </time>
-            
-
-            
-              <span class="post-meta-divider">|</span>
-            
-
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-calendar-check-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">Post modified&#58;</span>
-              
-              <time title="Post modified" itemprop="dateModified" datetime="2019-01-22T22:00:16+08:00">
-                2019-01-22
-              </time>
-            
-          </span>
-
-          
-
-          
-            
-          
-
-          
-          
-
-          
-
-          
-
-          
-
-        </div>
-      </header>
-    
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-
-      
-      
-
-      
-        
-          
-            <p>Packages-&gt;Settings View-&gt;Open-&gt;install<br>在Instal Packages的搜索栏里搜索vim，安装下面的vim-mode-plus即可，安装完成Atom即进入vim编辑模式，<br><img src="/2018/12/22/Atom使用vim/atom-vim.png" alt="hey"><br>需要设置具体项目点vim-mode-plus的Settings操作即可</p>
-
-          
-        
-      
-    </div>
-    
-    
-    
-
-    
-
-    
-
-    
-
-    <footer class="post-footer">
-      
-
-      
-
-      
-
-      
-      
-        <div class="post-eof"></div>
-      
-    </footer>
-  </div>
-  
-  
-  
-  </article>
-
-
-    
   </section>
 
   
@@ -2031,7 +2058,7 @@
               
                 <a href="/archives/">
               
-                  <span class="site-state-item-count">21</span>
+                  <span class="site-state-item-count">22</span>
                   <span class="site-state-item-name">posts</span>
                 </a>
               </div>
@@ -2042,7 +2069,7 @@
               
               <div class="site-state-item site-state-categories">
                 <a href="/categories/index.html">
-                  <span class="site-state-item-count">7</span>
+                  <span class="site-state-item-count">8</span>
                   <span class="site-state-item-name">categories</span>
                 </a>
               </div>
