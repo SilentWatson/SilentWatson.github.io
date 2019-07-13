@@ -79,18 +79,18 @@
 
 
 
-<meta name="description" content="演示类(The demo class)1234567891011public class Person&amp;#123;  private final String name;  private final boolean gender;  public Person(String name,boolean gender)&amp;#123;    this.name = name;    this.gende">
+<meta name="description" content="&amp;emsp;&amp;emsp;流提供了一种让我们可以在比集合更高的概念级别上指定计算的数据视图。通过使用流，我们可以说明想要完成什么任务，而不是说明如何去实现它。我们将操作的调度留给具体实现去解决。  演示类(The demo class)1234567891011public class Person&amp;#123;  private final String name;  private final">
 <meta name="keywords" content="java8">
 <meta property="og:type" content="article">
 <meta property="og:title" content="Java8 stream 流的基本操作">
 <meta property="og:url" content="https://SilentWatson.github.io/2019/07/09/Stream/index.html">
 <meta property="og:site_name" content="技术沉思录">
-<meta property="og:description" content="演示类(The demo class)1234567891011public class Person&amp;#123;  private final String name;  private final boolean gender;  public Person(String name,boolean gender)&amp;#123;    this.name = name;    this.gende">
+<meta property="og:description" content="&amp;emsp;&amp;emsp;流提供了一种让我们可以在比集合更高的概念级别上指定计算的数据视图。通过使用流，我们可以说明想要完成什么任务，而不是说明如何去实现它。我们将操作的调度留给具体实现去解决。  演示类(The demo class)1234567891011public class Person&amp;#123;  private final String name;  private final">
 <meta property="og:locale" content="default">
-<meta property="og:updated_time" content="2019-07-09T00:48:50.941Z">
+<meta property="og:updated_time" content="2019-07-13T12:40:58.391Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="Java8 stream 流的基本操作">
-<meta name="twitter:description" content="演示类(The demo class)1234567891011public class Person&amp;#123;  private final String name;  private final boolean gender;  public Person(String name,boolean gender)&amp;#123;    this.name = name;    this.gende">
+<meta name="twitter:description" content="&amp;emsp;&amp;emsp;流提供了一种让我们可以在比集合更高的概念级别上指定计算的数据视图。通过使用流，我们可以说明想要完成什么任务，而不是说明如何去实现它。我们将操作的调度留给具体实现去解决。  演示类(The demo class)1234567891011public class Person&amp;#123;  private final String name;  private final">
 
 
 
@@ -308,8 +308,8 @@
               
                 <span class="post-meta-item-text">Post modified&#58;</span>
               
-              <time title="Post modified" itemprop="dateModified" datetime="2019-07-09T08:48:50+08:00">
-                2019-07-09
+              <time title="Post modified" itemprop="dateModified" datetime="2019-07-13T20:40:58+08:00">
+                2019-07-13
               </time>
             
           </span>
@@ -364,8 +364,41 @@
       
 
       
-        <h3 id="演示类-The-demo-class"><a href="#演示类-The-demo-class" class="headerlink" title="演示类(The demo class)"></a>演示类(The demo class)</h3><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">Person</span></span>&#123;</span><br><span class="line">  <span class="keyword">private</span> <span class="keyword">final</span> String name;</span><br><span class="line">  <span class="keyword">private</span> <span class="keyword">final</span> <span class="keyword">boolean</span> gender;</span><br><span class="line"></span><br><span class="line">  <span class="function"><span class="keyword">public</span> <span class="title">Person</span><span class="params">(String name,<span class="keyword">boolean</span> gender)</span></span>&#123;</span><br><span class="line">    <span class="keyword">this</span>.name = name;</span><br><span class="line">    <span class="keyword">this</span>.gender = gender;</span><br><span class="line">  &#125;</span><br><span class="line">  <span class="comment">//getters and setters</span></span><br><span class="line">  <span class="comment">//...</span></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-<p>需求：在一个List<person> persons 中找出所有的女性，并打印其姓名<br><br>在Java8以前，我们通常是用foreach遍历实现这样的需求<br><br>但在Java8中，我们可以这样写<br><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">persons.stream()</span><br><span class="line">  .filter(Person:getGender)</span><br><span class="line">  .map(Person:getName)</span><br><span class="line">  .forEach(a-&gt;System.out.println(a));</span><br></pre></td></tr></table></figure></person></p>
+        <blockquote>
+<p>&emsp;&emsp;流提供了一种让我们可以在比集合更高的概念级别上指定计算的数据视图。通过使用流，我们可以说明想要完成什么任务，而不是说明如何去实现它。我们将操作的调度留给具体实现去解决。</p>
+</blockquote>
+<h3 id="演示类-The-demo-class"><a href="#演示类-The-demo-class" class="headerlink" title="演示类(The demo class)"></a>演示类(The demo class)</h3><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">Person</span></span>&#123;</span><br><span class="line">  <span class="keyword">private</span> <span class="keyword">final</span> String name;</span><br><span class="line">  <span class="keyword">private</span> <span class="keyword">final</span> <span class="keyword">boolean</span> gender;</span><br><span class="line"></span><br><span class="line">  <span class="function"><span class="keyword">public</span> <span class="title">Person</span><span class="params">(String name,<span class="keyword">boolean</span> gender)</span></span>&#123;</span><br><span class="line">    <span class="keyword">this</span>.name = name;</span><br><span class="line">    <span class="keyword">this</span>.gender = gender;</span><br><span class="line">  &#125;</span><br><span class="line">  <span class="comment">//getters and setters</span></span><br><span class="line">  <span class="comment">//...</span></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p>需求：在一个List<person> persons 中找出所有的男性，并打印其姓名<br><br>在Java8以前，我们通常是用foreach遍历实现这样的需求<br><br>但在Java8中，我们可以这样写<br><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">persons.stream()</span><br><span class="line">  .filter(Person:getGender)</span><br><span class="line">  .map(Person:getName)</span><br><span class="line">  .forEach(a-&gt;System.out.println(a));</span><br></pre></td></tr></table></figure></person></p>
+<h3 id="流的使用"><a href="#流的使用" class="headerlink" title="流的使用"></a>流的使用</h3><p>&emsp;&emsp;这个工作流是操作流时的典型流程。</p>
+<ul>
+<li>创建一个流</li>
+<li>指定将初始流转换为其他流的中间操作，可能包含多个步骤</li>
+<li>应用终止操作，从而产生结果。这个操作会强制执行之前的惰性操作。从此之后，这个流就在也不能使用了（mark:一个流只能使用一次)<h4 id="流的创建"><a href="#流的创建" class="headerlink" title="流的创建"></a>流的创建</h4><h5 id="从数组创建"><a href="#从数组创建" class="headerlink" title="从数组创建"></a>从数组创建</h5><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">Stream&lt;Stream&gt; words = Stream.of(<span class="string">"hello,stream"</span>.split(<span class="string">""</span>));</span><br></pre></td></tr></table></figure>
+</li>
+</ul>
+<p><code>of</code> 方法具有可变长的参数，因此我们可以构建具有任意数量引员的流<br><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">Stream&lt;Stream&gt; coderWords = Stream.of(<span class="string">"java"</span>,<span class="string">"python"</span>,<span class="string">"c"</span>,<span class="string">"scala"</span>);</span><br></pre></td></tr></table></figure></p>
+<blockquote>
+<p>使用<code>ArrayS.stream(array,from,to)</code>可以从数组中位于<code>from</code>（包括）和<code>to</code>（不包括）的元素中创建一个流</p>
+</blockquote>
+<h5 id="从集合创建"><a href="#从集合创建" class="headerlink" title="从集合创建"></a>从集合创建</h5><blockquote>
+<p>Collection<e> 有<code>stream()</code>和<code>parallelStream()</code>,意味着所有实现Collection的集合都可以使用这两个方法来创建一个流，见演示</e></p>
+<ul>
+<li>自己创建流<ul>
+<li>创建不包含任何元素的流<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">Stream&lt;String&gt; silence = Stream.empty();</span><br></pre></td></tr></table></figure>
+</li>
+</ul>
+</li>
+</ul>
+</blockquote>
+<pre><code>+ `genetate`产生无限流
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">Stream&lt;String&gt; echos = Stream.generate(()-&gt;<span class="string">"Echo"</span>);<span class="comment">//常量值流</span></span><br><span class="line">Stream&lt;Double&gt; randoms = Stream.generate(Math::random);<span class="comment">//随机数流</span></span><br></pre></td></tr></table></figure>
+
++ `iterate`产生无限流
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">Stream&lt;BigInteger&gt; integers = Stream.iterate(BigInteger.ZERO,n-&gt;n.add(BigInteger.ONE));<span class="comment">//迭代增加，产生0 1 2 3 ...</span></span><br></pre></td></tr></table></figure>
+</code></pre><h5 id="中间操作"><a href="#中间操作" class="headerlink" title="中间操作"></a>中间操作</h5><h6 id="filter"><a href="#filter" class="headerlink" title="filter"></a>filter</h6><p>filter过滤流，很形象贴切<br>    <figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">List&lt;String&gt; wordList = ...;</span><br><span class="line">Stream&lt;String&gt; words =  wordList.stream().filter(w-&gt;w.length()&gt;<span class="number">12</span>);</span><br></pre></td></tr></table></figure></p>
+<h6 id="map"><a href="#map" class="headerlink" title="map"></a>map</h6><p>按照某种方式转换流<br>    <figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">Stream&lt;String&gt; lowerCaseWords =</span><br><span class="line">words.stream().map(String::toLowerCase);</span><br></pre></td></tr></table></figure></p>
+<h6 id="flatMap"><a href="#flatMap" class="headerlink" title="flatMap"></a>flatMap</h6><p>获取摊平的流<br>    <figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">Stream&lt;Stream&lt;String&gt;&gt; result =</span><br><span class="line">words.stream().map(a-&gt;letters(a));</span><br><span class="line">Stream&lt;String&gt; flatResult =</span><br><span class="line">words.stream().flatMap(a-&gt;letters(a));</span><br></pre></td></tr></table></figure></p>
+<h5 id="limit-skip-concat-distinct-sorted-peek"><a href="#limit-skip-concat-distinct-sorted-peek" class="headerlink" title="limit,skip,concat,distinct,sorted,peek"></a><code>limit</code>,<code>skip</code>,<code>concat</code>,<code>distinct</code>,<code>sorted</code>,<code>peek</code></h5><h5 id="终结操作（约简）"><a href="#终结操作（约简）" class="headerlink" title="终结操作（约简）"></a>终结操作（约简）</h5><p>。。。</p>
 
       
     </div>
@@ -556,7 +589,7 @@
             
 
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-3"><a class="nav-link" href="#演示类-The-demo-class"><span class="nav-number">1.</span> <span class="nav-text">演示类(The demo class)</span></a></li></ol></div>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-3"><a class="nav-link" href="#演示类-The-demo-class"><span class="nav-number">1.</span> <span class="nav-text">演示类(The demo class)</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#流的使用"><span class="nav-number">2.</span> <span class="nav-text">流的使用</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#流的创建"><span class="nav-number">2.1.</span> <span class="nav-text">流的创建</span></a><ol class="nav-child"><li class="nav-item nav-level-5"><a class="nav-link" href="#从数组创建"><span class="nav-number">2.1.1.</span> <span class="nav-text">从数组创建</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#从集合创建"><span class="nav-number">2.1.2.</span> <span class="nav-text">从集合创建</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#中间操作"><span class="nav-number">2.1.3.</span> <span class="nav-text">中间操作</span></a><ol class="nav-child"><li class="nav-item nav-level-6"><a class="nav-link" href="#filter"><span class="nav-number">2.1.3.1.</span> <span class="nav-text">filter</span></a></li><li class="nav-item nav-level-6"><a class="nav-link" href="#map"><span class="nav-number">2.1.3.2.</span> <span class="nav-text">map</span></a></li><li class="nav-item nav-level-6"><a class="nav-link" href="#flatMap"><span class="nav-number">2.1.3.3.</span> <span class="nav-text">flatMap</span></a></li></ol></li><li class="nav-item nav-level-5"><a class="nav-link" href="#limit-skip-concat-distinct-sorted-peek"><span class="nav-number">2.1.4.</span> <span class="nav-text">limit,skip,concat,distinct,sorted,peek</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#终结操作（约简）"><span class="nav-number">2.1.5.</span> <span class="nav-text">终结操作（约简）</span></a></li></ol></li></ol></li></ol></div>
             
 
           </div>
