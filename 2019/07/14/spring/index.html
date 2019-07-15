@@ -79,13 +79,17 @@
 
 
 
-<meta property="og:type" content="website">
-<meta property="og:title" content="技术沉思录">
-<meta property="og:url" content="https://SilentWatson.github.io/tags/java-core/index.html">
+<meta name="description" content="Spring 简化开发的四个基本策略基于POJO的轻量级和最小侵入性编程通过依赖注入和面向接口松耦合基于切面和惯性进行申明式编程通过切面和模板减少样版式代码Spring5模块结构 Beans Core Context ExpressionSpring IOCBeanFactoryBeanDefinitionBeanDefinitionReader">
+<meta property="og:type" content="article">
+<meta property="og:title" content="spring">
+<meta property="og:url" content="https://SilentWatson.github.io/2019/07/14/spring/index.html">
 <meta property="og:site_name" content="技术沉思录">
+<meta property="og:description" content="Spring 简化开发的四个基本策略基于POJO的轻量级和最小侵入性编程通过依赖注入和面向接口松耦合基于切面和惯性进行申明式编程通过切面和模板减少样版式代码Spring5模块结构 Beans Core Context ExpressionSpring IOCBeanFactoryBeanDefinitionBeanDefinitionReader">
 <meta property="og:locale" content="default">
+<meta property="og:updated_time" content="2019-07-15T00:43:02.447Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="技术沉思录">
+<meta name="twitter:title" content="spring">
+<meta name="twitter:description" content="Spring 简化开发的四个基本策略基于POJO的轻量级和最小侵入性编程通过依赖注入和面向接口松耦合基于切面和惯性进行申明式编程通过切面和模板减少样版式代码Spring5模块结构 Beans Core Context ExpressionSpring IOCBeanFactoryBeanDefinitionBeanDefinitionReader">
 
 
 
@@ -115,13 +119,13 @@
 
 
 
-  <link rel="canonical" href="https://SilentWatson.github.io/tags/java-core/">
+  <link rel="canonical" href="https://SilentWatson.github.io/2019/07/14/spring/">
 
 
 
 
 
-  <title>Tag: java-core | 技术沉思录</title>
+  <title>spring | 技术沉思录</title>
   
 
 
@@ -140,7 +144,7 @@
     
   
 
-  <div class="container sidebar-position-left ">
+  <div class="container sidebar-position-left page-post-detail">
     <div class="headband"></div>
 
     <header id="header" class="header" itemscope="" itemtype="http://schema.org/WPHeader">
@@ -244,52 +248,158 @@
           <div id="content" class="content">
             
 
-  
-  
-  
-  <div class="post-block tag">
+  <div id="posts" class="posts-expand">
+    
 
-    <div id="posts" class="posts-collapse">
-      <div class="collection-title">
-        <h1>java-core<small>Tag</small>
-        </h1>
-      </div>
+  
 
-      
-        
+  
+  
+  
 
   <article class="post post-type-normal" itemscope="" itemtype="http://schema.org/Article">
-    <header class="post-header">
+  
+  
+  
+  <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="https://SilentWatson.github.io/2019/07/14/spring/">
 
-      <h2 class="post-title">
+    <span hidden itemprop="author" itemscope="" itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="Silent Watson">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="/images/avatar.gif">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope="" itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="技术沉思录">
+    </span>
+
+    
+      <header class="post-header">
+
         
-            <a class="post-title-link" href="/2019/01/10/自定义注解的场景及实现/" itemprop="url">
-              
-                <span itemprop="name">自定义注解的场景及实现</span>
-              
-            </a>
         
-      </h2>
+          <h1 class="post-title" itemprop="name headline">spring</h1>
+        
 
-      <div class="post-meta">
-        <time class="post-time" itemprop="dateCreated" datetime="2019-01-10T21:14:33+08:00" content="2019-01-10">
-          01-10
-        </time>
-      </div>
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">Posted on</span>
+              
+              <time title="Post created" itemprop="dateCreated datePublished" datetime="2019-07-14T22:07:43+08:00">
+                2019-07-14
+              </time>
+            
 
-    </header>
-  </article>
+            
+              <span class="post-meta-divider">|</span>
+            
 
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-check-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">Post modified&#58;</span>
+              
+              <time title="Post modified" itemprop="dateModified" datetime="2019-07-15T08:43:02+08:00">
+                2019-07-15
+              </time>
+            
+          </span>
+
+          
+
+          
+            
+          
+
+          
+          
+
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        <h3 id="Spring-简化开发的四个基本策略"><a href="#Spring-简化开发的四个基本策略" class="headerlink" title="Spring 简化开发的四个基本策略"></a>Spring 简化开发的四个基本策略</h3><h5 id="基于POJO的轻量级和最小侵入性编程"><a href="#基于POJO的轻量级和最小侵入性编程" class="headerlink" title="基于POJO的轻量级和最小侵入性编程"></a>基于POJO的轻量级和最小侵入性编程</h5><h5 id="通过依赖注入和面向接口松耦合"><a href="#通过依赖注入和面向接口松耦合" class="headerlink" title="通过依赖注入和面向接口松耦合"></a>通过依赖注入和面向接口松耦合</h5><h5 id="基于切面和惯性进行申明式编程"><a href="#基于切面和惯性进行申明式编程" class="headerlink" title="基于切面和惯性进行申明式编程"></a>基于切面和惯性进行申明式编程</h5><h5 id="通过切面和模板减少样版式代码"><a href="#通过切面和模板减少样版式代码" class="headerlink" title="通过切面和模板减少样版式代码"></a>通过切面和模板减少样版式代码</h5><h3 id="Spring5模块结构"><a href="#Spring5模块结构" class="headerlink" title="Spring5模块结构"></a>Spring5模块结构</h3><ol>
+<li>Beans</li>
+<li>Core</li>
+<li>Context</li>
+<li>Expression<h3 id="Spring-IOC"><a href="#Spring-IOC" class="headerlink" title="Spring IOC"></a>Spring IOC</h3><h4 id="BeanFactory"><a href="#BeanFactory" class="headerlink" title="BeanFactory"></a>BeanFactory</h4><h4 id="BeanDefinition"><a href="#BeanDefinition" class="headerlink" title="BeanDefinition"></a>BeanDefinition</h4><h4 id="BeanDefinitionReader"><a href="#BeanDefinitionReader" class="headerlink" title="BeanDefinitionReader"></a>BeanDefinitionReader</h4></li>
+</ol>
 
       
     </div>
+    
+    
+    
 
+    
+
+    
+
+    
+
+    <footer class="post-footer">
+      
+
+      
+      
+      
+
+      
+        <div class="post-nav">
+          <div class="post-nav-next post-nav-item">
+            
+              <a href="/2019/07/14/Jenkins/" rel="next" title="Jenkins">
+                <i class="fa fa-chevron-left"></i> Jenkins
+              </a>
+            
+          </div>
+
+          <span class="post-nav-divider"></span>
+
+          <div class="post-nav-prev post-nav-item">
+            
+          </div>
+        </div>
+      
+
+      
+      
+    </footer>
   </div>
   
   
   
+  </article>
 
-  
+
+
+    <div class="post-spread">
+      
+    </div>
+  </div>
 
 
           </div>
@@ -297,6 +407,10 @@
 
 
           
+
+  
+
+
 
         </div>
         
@@ -317,8 +431,17 @@
       
 
       
+        <ul class="sidebar-nav motion-element">
+          <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap">
+            Table of Contents
+          </li>
+          <li class="sidebar-nav-overview" data-target="site-overview-wrap">
+            Overview
+          </li>
+        </ul>
+      
 
-      <section class="site-overview-wrap sidebar-panel sidebar-panel-active">
+      <section class="site-overview-wrap sidebar-panel">
         <div class="site-overview">
           <div class="site-author motion-element" itemprop="author" itemscope="" itemtype="http://schema.org/Person">
             
@@ -394,6 +517,22 @@
         </div>
       </section>
 
+      
+      <!--noindex-->
+        <section class="post-toc-wrap motion-element sidebar-panel sidebar-panel-active">
+          <div class="post-toc">
+
+            
+              
+            
+
+            
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-3"><a class="nav-link" href="#Spring-简化开发的四个基本策略"><span class="nav-number">1.</span> <span class="nav-text">Spring 简化开发的四个基本策略</span></a><ol class="nav-child"><li class="nav-item nav-level-5"><a class="nav-link" href="#基于POJO的轻量级和最小侵入性编程"><span class="nav-number">1.0.1.</span> <span class="nav-text">基于POJO的轻量级和最小侵入性编程</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#通过依赖注入和面向接口松耦合"><span class="nav-number">1.0.2.</span> <span class="nav-text">通过依赖注入和面向接口松耦合</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#基于切面和惯性进行申明式编程"><span class="nav-number">1.0.3.</span> <span class="nav-text">基于切面和惯性进行申明式编程</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#通过切面和模板减少样版式代码"><span class="nav-number">1.0.4.</span> <span class="nav-text">通过切面和模板减少样版式代码</span></a></li></ol></li></ol><li class="nav-item nav-level-3"><a class="nav-link" href="#Spring5模块结构"><span class="nav-number">2.</span> <span class="nav-text">Spring5模块结构</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Spring-IOC"><span class="nav-number">3.</span> <span class="nav-text">Spring IOC</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#BeanFactory"><span class="nav-number">3.1.</span> <span class="nav-text">BeanFactory</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#BeanDefinition"><span class="nav-number">3.2.</span> <span class="nav-text">BeanDefinition</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#BeanDefinitionReader"><span class="nav-number">3.3.</span> <span class="nav-text">BeanDefinitionReader</span></a></li></ol></li></div>
+            
+
+          </div>
+        </section>
+      <!--/noindex-->
       
 
       
@@ -535,6 +674,10 @@
 
 
   
+  <script type="text/javascript" src="/js/src/scrollspy.js?v=5.1.4"></script>
+<script type="text/javascript" src="/js/src/post-details.js?v=5.1.4"></script>
+
+
 
   
 
