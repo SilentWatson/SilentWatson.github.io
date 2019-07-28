@@ -306,8 +306,8 @@
               
                 <span class="post-meta-item-text">Post modified&#58;</span>
               
-              <time title="Post modified" itemprop="dateModified" datetime="2019-07-24T09:01:11+08:00">
-                2019-07-24
+              <time title="Post modified" itemprop="dateModified" datetime="2019-07-27T23:54:20+08:00">
+                2019-07-27
               </time>
             
           </span>
@@ -366,18 +366,41 @@
           
             <h2 id="Spring-Framework-核心特性"><a href="#Spring-Framework-核心特性" class="headerlink" title="Spring Framework 核心特性"></a>Spring Framework 核心特性</h2><h3 id="IoC-Container"><a href="#IoC-Container" class="headerlink" title="IoC Container"></a>IoC Container</h3><h4 id="IoC"><a href="#IoC" class="headerlink" title="IoC"></a>IoC</h4><h4 id="DI"><a href="#DI" class="headerlink" title="DI"></a>DI</h4><ul>
 <li>依赖查找(Dependency Lookup)<ul>
-<li>ID、别名、名称:<code>BeanFactory#getBean(String):Object</code></li>
-<li>类型:<code>BeanFactory#getBean(Class):T</code></li>
-<li>注解:<code>ListableBeanFactory#getBeansWithAnnotation</code></li>
-<li><code>FactoryBean</code>查找:<code>FactoryBean#getObject():T</code></li>
-<li><code>ObjectBean</code>查找:<code>ObjectFactory#getObject():T</code></li>
+<li>ID、别名、名称查找:<ul>
+<li><code>BeanFactory#getBean(String):Object</code></li>
+</ul>
+</li>
+<li>类型查找:<ul>
+<li><code>BeanFactory#getBean(Class&lt;T&gt;):T</code></li>
+</ul>
+</li>
+<li>注解查找:<ul>
+<li><code>ListableBeanFactory#getBeansWithAnnotation(Class&lt;? extends Annotation&gt;):Map&lt;String, Object&gt;</code></li>
+</ul>
+</li>
+<li><code>FactoryBean</code>查找:<ul>
+<li><code>FactoryBean#getObject():T</code></li>
+</ul>
+</li>
+<li><code>ObjectBean</code>查找:<ul>
+<li><code>ObjectFactory#getObject():T</code></li>
+</ul>
+</li>
 </ul>
 </li>
 <li>依赖注入（Dependency Injection)<ul>
+<li>手段<ul>
+<li>spring<code>@Autowired</code></li>
+<li>java<code>@Resource</code></li>
+</ul>
+</li>
+<li>途径<ul>
 <li>字段(field)</li>
 <li>属性(setter)</li>
 <li>方法(method)</li>
 <li>构造器(constructor)</li>
+</ul>
+</li>
 </ul>
 </li>
 </ul>
